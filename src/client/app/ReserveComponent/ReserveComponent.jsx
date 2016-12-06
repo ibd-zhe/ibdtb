@@ -1,0 +1,101 @@
+/**
+ * Created by jiangjiang on 05/12/2016.
+ */
+import React from 'react';
+import SearchComponent from '../UIComponent/SearchComponent.jsx'
+import orderByUser from '../Model/IbdDb.js'
+
+class ReserveComponent extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {content: null};
+        this.search = this.search.bind(this);
+        this.updateContent = this.updateContent.bind(this);
+    }
+
+    search(keywords) {
+        orderByUser(keywords, this.updateContent)
+    }
+
+    updateContent(content) {
+        if (content === null) {
+            window.alert('网络错误');
+        } else if (content == 'no') {
+            window.alert('没找到此用户');
+        } else {
+            this.setState({
+                content: JSON.parse(content)
+            });
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <SearchComponent search={this.search}/>
+                <UserComponent content={this.state.content}/>
+            </div>
+        );
+    }
+}
+
+class UserComponent extends React.Component {
+
+    orders() {
+        return this.props.content.orders.map((number, created, items) =>
+            <OrderComponent key={number} number={number} created={created} items={items}/>
+        );
+    }
+
+    render() {
+        if (this.props.content === null) {
+            return null;
+        }
+        else {
+            return (
+                <div>
+                    {this.props.content.user_id}
+                    {this.orders()}
+                </div>
+            );
+        }
+
+    }
+}
+
+class OrderComponent extends React.Component {
+
+    items() {
+        return this.props.items.map((imgUrl, title, color, q, status, avail_q, index) =>
+            <ItemComponent imgUrl={imgUrl} title={title} color={color} q={q} status={status} avail_q={avail_q} key={index}/>
+        );
+    }
+
+    render() {
+        return (
+            <div>
+                <div>{this.props.number}</div>
+                <div>{this.props.created}</div>
+                <div>{this.items()}</div>
+            </div>
+        );
+    }
+}
+
+class ItemComponent extends React.Component {
+    render() {
+        return (
+            <div>
+                <img src={this.props.imgUrl}/>
+                <div>{this.props.title}</div>
+                <div>{this.props.color}</div>
+                <div>{this.props.q}</div>
+                <div>{this.props.status}</div>
+                <div>{this.props.avail_q}</div>
+            </div>
+        );
+    }
+}
+
+export default ReserveComponent;
+
