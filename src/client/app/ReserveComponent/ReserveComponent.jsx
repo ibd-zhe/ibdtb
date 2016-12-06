@@ -43,7 +43,7 @@ class UserComponent extends React.Component {
 
     orders() {
         return this.props.content.orders.map((order) =>
-            <OrderComponent key={order.ordernumber} pay_time={order.pay_time} items={order.items}/>
+            <OrderComponent key={order.ordernumber} number={order.ordernumber} pay_time={order.pay_time} items={order.items}/>
         );
     }
 
@@ -74,7 +74,7 @@ class OrderComponent extends React.Component {
     render() {
         return (
             <div>
-                <div>{this.props.key}</div>
+                <div>{this.props.number}</div>
                 <div>{this.props.pay_time}</div>
                 <div>{this.items()}</div>
             </div>
