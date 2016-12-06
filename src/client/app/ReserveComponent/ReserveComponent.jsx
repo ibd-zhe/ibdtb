@@ -42,8 +42,8 @@ class ReserveComponent extends React.Component{
 class UserComponent extends React.Component {
 
     orders() {
-        return this.props.content.orders.map((number, created, items) =>
-            <OrderComponent key={number} number={number} created={created} items={items}/>
+        return this.props.content.orders.map((order) =>
+            <OrderComponent key={order.ordernumber} pay_time={order.pay_time} items={order.items}/>
         );
     }
 
@@ -66,16 +66,16 @@ class UserComponent extends React.Component {
 class OrderComponent extends React.Component {
 
     items() {
-        return this.props.items.map((imgUrl, title, color, q, status, avail_q, index) =>
-            <ItemComponent imgUrl={imgUrl} title={title} color={color} q={q} status={status} avail_q={avail_q} key={index}/>
+        return this.props.items.map((item) =>
+            <ItemComponent key={item.id} imgUrl={item.imgUrl} title={item.title} color={item.color} q={item.num} status={item.status} avail_q={item.avail_q}/>
         );
     }
 
     render() {
         return (
             <div>
-                <div>{this.props.number}</div>
-                <div>{this.props.created}</div>
+                <div>{this.props.key}</div>
+                <div>{this.props.pay_time}</div>
                 <div>{this.items()}</div>
             </div>
         );
