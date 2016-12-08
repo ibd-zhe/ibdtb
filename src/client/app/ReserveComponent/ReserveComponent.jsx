@@ -4,6 +4,8 @@
 import React from 'react';
 import SearchComponent from '../UIComponent/SearchComponent.jsx'
 import orderByUser from '../Model/IbdDb.js'
+import {searchStyle, userStyle} from '../Style/ReserveCmpStyle.js'
+import {contentStyle} from '../Style/AppStyle.js'
 
 class ReserveComponent extends React.Component{
     constructor(props) {
@@ -31,8 +33,8 @@ class ReserveComponent extends React.Component{
 
     render() {
         return (
-            <div>
-                <SearchComponent search={this.search}/>
+            <div style={contentStyle}>
+                <SearchComponent search={this.search} style={searchStyle} placeholder="请输入上帝id"/>
                 <UserComponent content={this.state.content}/>
             </div>
         );
@@ -54,12 +56,11 @@ class UserComponent extends React.Component {
         else {
             return (
                 <div>
-                    {this.props.content.user_id}
+                    <div style={userStyle}>{this.props.content.user_id}</div>
                     {this.orders()}
                 </div>
             );
         }
-
     }
 }
 

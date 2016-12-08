@@ -1,10 +1,5 @@
 import React from 'react';
 
-const searchBarStyle = {
-    width: 100,
-    height: 50,
-};
-
 class SearchComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -18,19 +13,18 @@ class SearchComponent extends React.Component {
     }
 
     handleSubmit(e) {
-        console.log('fuck');
         e.preventDefault();
         this.props.search(this.state.value);
     }
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                <input style={searchBarStyle} type="search" value={this.state.value} onChange={this.handleInput} placeholder="请输入用户名" />
-                    <input type="submit" value="search"/>
+                <form onSubmit={this.handleSubmit} style={this.props.style.formStyle}>
+                    <input style={this.props.style.inputStyle} type="text" value={this.state.value}
+                           onChange={this.handleInput}
+                           placeholder={this.props.placeholder}/>
+                    <input type="image" src={this.props.style.submitStyle.imgUrl} style={this.props.style.submitStyle}/>
                 </form>
-            </div>
         );
     }
 }

@@ -1,35 +1,14 @@
 import React from 'react';
+import {titleBarStyle, tabBarStyle, titleStyle, tabStyle} from './Style/AppStyle.js'
 
 const title = "爱买丢";
-const tabnames = ["预留查询", "上现货"];
-
-const titleBarStyle = {
-    height: 60,
-    //backgroundColor: 'black',
-    //color: 'white',
-    position: 'absolute',
-    top:0,
-    left:0,
-    width: '100%'
-};
-
-const titleStyle = {
-    position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    left: 50
-};
-
-const tabBarStyle = {
-    position: 'absolute',
-    left: 500,
-};
+const tabnames = ["预留查询", "上现货", "下单"];
 
 class TitleBar extends React.Component {
     render() {
         return (
-        <div>
-            <div>{title}</div>
+        <div style={titleBarStyle}>
+            <div style={titleStyle}>{title}</div>
             <TabBar tabnames={tabnames}/>
         </div>
         );
@@ -51,9 +30,13 @@ class TabBar extends React.Component {
 
   render() {
     return (
-      <div style={this.props.style}>
-            {this.tabs()}
-      </div>
+        <table style={tabBarStyle}>
+            <tbody>
+            <tr>
+                {this.tabs()}
+            </tr>
+            </tbody>
+        </table>
     );
   }
 }
@@ -61,9 +44,9 @@ class TabBar extends React.Component {
 class Tab extends React.Component {
     render() {
         return (
-            <div>
+            <td style={tabStyle}>
                 {this.props.name}
-            </div>
+            </td>
         );
     }
 }
