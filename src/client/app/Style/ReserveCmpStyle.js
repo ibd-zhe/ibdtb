@@ -36,8 +36,42 @@ const searchStyle = {
 
 
 const userStyle = {
-    leftMargin: titleStyle.left,
-    topMargin: 5
+    marginLeft: titleStyle.left,
+    marginTop: 5
 };
 
-export {searchStyle, userStyle};
+
+// order bar
+const orderStyle = {
+    width: '100%',
+    height: 60,
+    backgroundColor: 'rgba(%43,%43,%43,0.67)',
+
+    numberStyle: {
+        marginLeft: userStyle.marginLeft,
+        height: '100%',
+        display: 'inline-block',
+        textAlign: 'center'
+    },
+
+    timeStyle: {
+        marginLeft: 20,
+        height: '100%',
+        display: 'inline-block',
+        textAlign: 'center'
+    },
+
+    reserveQStyle: {
+        marginLeft: 500,
+        height: '100%',
+        display: 'inline-block',
+        textAlign: 'center'
+    }
+};
+
+// item
+const itemStyle = {
+
+};
+
+export {searchStyle, userStyle, orderStyle, itemStyle};

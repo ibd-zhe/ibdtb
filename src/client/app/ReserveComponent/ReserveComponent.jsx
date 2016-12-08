@@ -4,7 +4,7 @@
 import React from 'react';
 import SearchComponent from '../UIComponent/SearchComponent.jsx'
 import orderByUser from '../Model/IbdDb.js'
-import {searchStyle, userStyle} from '../Style/ReserveCmpStyle.js'
+import {searchStyle, userStyle, orderStyle, itemStyle} from '../Style/ReserveCmpStyle.js'
 import {contentStyle} from '../Style/AppStyle.js'
 
 class ReserveComponent extends React.Component{
@@ -75,18 +75,29 @@ class OrderComponent extends React.Component {
     render() {
         return (
             <div>
-                <div>{this.props.number}</div>
-                <div>{this.props.pay_time}</div>
-                <div>{this.items()}</div>
+                <OrderInfoComponent number={this.props.number} pay_time={this.props.pay_time}/>
+                {this.items()}
             </div>
         );
+    }
+}
+
+class OrderInfoComponent extends React.Component {
+    render() {
+        return (
+            <div style={orderStyle}>
+                <div style={orderStyle.numberStyle}>{"订单编号     " + this.props.number}</div>
+                <div style={orderStyle.timeStyle}>{this.props.pay_time}</div>
+                <div style={orderStyle.reserveQStyle}>{"预留"}</div>
+            </div>
+        )
     }
 }
 
 class ItemComponent extends React.Component {
     render() {
         return (
-            <div>
+            <div style={itemStyle}>
                 <img src={this.props.imgUrl}/>
                 <div>{this.props.title}</div>
                 <div>{this.props.color}</div>

@@ -23653,21 +23653,8 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    this.props.number
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    this.props.pay_time
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    this.items()
-	                )
+	                _react2.default.createElement(OrderInfoComponent, { number: this.props.number, pay_time: this.props.pay_time }),
+	                this.items()
 	            );
 	        }
 	    }]);
@@ -23675,8 +23662,45 @@
 	    return OrderComponent;
 	}(_react2.default.Component);
 	
-	var ItemComponent = function (_React$Component4) {
-	    _inherits(ItemComponent, _React$Component4);
+	var OrderInfoComponent = function (_React$Component4) {
+	    _inherits(OrderInfoComponent, _React$Component4);
+	
+	    function OrderInfoComponent() {
+	        _classCallCheck(this, OrderInfoComponent);
+	
+	        return _possibleConstructorReturn(this, (OrderInfoComponent.__proto__ || Object.getPrototypeOf(OrderInfoComponent)).apply(this, arguments));
+	    }
+	
+	    _createClass(OrderInfoComponent, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { style: _ReserveCmpStyle.orderStyle },
+	                _react2.default.createElement(
+	                    'div',
+	                    { style: _ReserveCmpStyle.orderStyle.numberStyle },
+	                    "订单编号     " + this.props.number
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { style: _ReserveCmpStyle.orderStyle.timeStyle },
+	                    this.props.pay_time
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { style: _ReserveCmpStyle.orderStyle.reserveQStyle },
+	                    "预留"
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return OrderInfoComponent;
+	}(_react2.default.Component);
+	
+	var ItemComponent = function (_React$Component5) {
+	    _inherits(ItemComponent, _React$Component5);
 	
 	    function ItemComponent() {
 	        _classCallCheck(this, ItemComponent);
@@ -23689,7 +23713,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
+	                { style: _ReserveCmpStyle.itemStyle },
 	                _react2.default.createElement('img', { src: this.props.imgUrl }),
 	                _react2.default.createElement(
 	                    'div',
@@ -75679,7 +75703,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.userStyle = exports.searchStyle = undefined;
+	exports.itemStyle = exports.orderStyle = exports.userStyle = exports.searchStyle = undefined;
 	
 	var _AppStyle = __webpack_require__(/*! ./AppStyle.js */ 185);
 	
@@ -75717,12 +75741,45 @@
 	};
 	
 	var userStyle = {
-	    leftMargin: _AppStyle.titleStyle.left,
-	    topMargin: 5
+	    marginLeft: _AppStyle.titleStyle.left,
+	    marginTop: 5
 	};
+	
+	// order bar
+	var orderStyle = {
+	    width: '100%',
+	    height: 60,
+	    backgroundColor: 'rgba(%43,%43,%43,0.67)',
+	
+	    numberStyle: {
+	        marginLeft: userStyle.marginLeft,
+	        height: '100%',
+	        display: 'inline-block',
+	        textAlign: 'center'
+	    },
+	
+	    timeStyle: {
+	        marginLeft: 20,
+	        height: '100%',
+	        display: 'inline-block',
+	        textAlign: 'center'
+	    },
+	
+	    reserveQStyle: {
+	        marginLeft: 500,
+	        height: '100%',
+	        display: 'inline-block',
+	        textAlign: 'center'
+	    }
+	};
+	
+	// item
+	var itemStyle = {};
 	
 	exports.searchStyle = searchStyle;
 	exports.userStyle = userStyle;
+	exports.orderStyle = orderStyle;
+	exports.itemStyle = itemStyle;
 
 /***/ }
 /******/ ]);
