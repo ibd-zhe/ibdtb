@@ -23434,7 +23434,7 @@
 	var host = "http://54.223.65.44:8100/static/";
 	var bgImgUrl = host + "image/ibd/bg";
 	var svgUrl = {
-	    searchSvg: host + "file/search.svg"
+	    searchSvg: host + "file/svg/search.svg"
 	};
 	
 	var stringBgColor = 'rgba(54, 54, 54, 0.64)';
@@ -23451,7 +23451,7 @@
 	    height: '100%',
 	
 	    // font
-	    fontFamily: 'Lato, SimHei, 黑体',
+	    fontFamily: 'Lato, SimHei',
 	
 	    // color
 	    color: 'rgb(90%, 90%, 90%)',
@@ -23469,14 +23469,15 @@
 	    backgroundColor: stringBgColor,
 	    width: '100%',
 	    position: 'relative',
-	    flex: '0 1 auto'
+	    flex: '0 1 auto',
+	    fontFamily: 'Lato, YueHei'
 	};
 	
 	var titleStyle = {
 	    position: 'absolute',
 	    top: '50%',
 	    transform: 'translateY(-50%)',
-	    left: 40,
+	    left: 30,
 	    fontSize: 30
 	};
 	
@@ -23685,7 +23686,7 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { style: _ReserveCmpStyle.orderStyle.timeStyle },
-	                    this.props.pay_time
+	                    "付款时间     " + this.props.pay_time
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -23709,36 +23710,57 @@
 	    }
 	
 	    _createClass(ItemComponent, [{
+	        key: 'itemTBUrl',
+	        value: function itemTBUrl() {
+	            return "https://item.taobao.com/item.htm?id=" + this.props.itemid;
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'div',
+	                'table',
 	                { style: _ReserveCmpStyle.itemStyle },
-	                _react2.default.createElement('img', { src: this.props.imgUrl }),
 	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    this.props.title
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    this.props.color
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    this.props.q
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    this.props.status
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    this.props.avail_q
+	                    'tr',
+	                    { style: _ReserveCmpStyle.itemStyle.rowStyle },
+	                    _react2.default.createElement(
+	                        'td',
+	                        { style: _ReserveCmpStyle.itemStyle.imgStyle },
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: this.itemTBUrl(), style: 'width: inherit' },
+	                            _react2.default.createElement('img', { src: this.props.imgUrl, style: 'width: inherit;height: auto' })
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'td',
+	                        { style: _ReserveCmpStyle.itemStyle.nameStyle },
+	                        _react2.default.createElement(
+	                            'p',
+	                            { style: _ReserveCmpStyle.itemStyle.nameStyle.titleStyle },
+	                            this.props.title
+	                        ),
+	                        _react2.default.createElement(
+	                            'p',
+	                            { style: _ReserveCmpStyle.itemStyle.nameStyle.colorStyle },
+	                            this.props.color
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'td',
+	                        { style: _ReserveCmpStyle.itemStyle.numStyle },
+	                        this.props.q
+	                    ),
+	                    _react2.default.createElement(
+	                        'td',
+	                        { style: _ReserveCmpStyle.itemStyle.statusStyle },
+	                        this.props.status
+	                    ),
+	                    _react2.default.createElement(
+	                        'td',
+	                        { style: _ReserveCmpStyle.itemStyle.numStyle },
+	                        this.props.avail_q
+	                    )
 	                )
 	            );
 	        }
@@ -75705,7 +75727,11 @@
 	});
 	exports.itemStyle = exports.orderStyle = exports.userStyle = exports.searchStyle = undefined;
 	
+	var _itemStyle;
+	
 	var _AppStyle = __webpack_require__(/*! ./AppStyle.js */ 185);
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var searchHeight = 40;
 	
@@ -75742,7 +75768,8 @@
 	
 	var userStyle = {
 	    marginLeft: _AppStyle.titleStyle.left,
-	    marginTop: 5
+	    marginTop: 5,
+	    marginBottom: 50
 	};
 	
 	// order bar
@@ -75759,14 +75786,14 @@
 	    },
 	
 	    timeStyle: {
-	        marginLeft: 20,
+	        marginLeft: 70,
 	        height: '100%',
 	        display: 'inline-block',
 	        textAlign: 'center'
 	    },
 	
 	    reserveQStyle: {
-	        marginLeft: 500,
+	        marginLeft: 750,
 	        height: '100%',
 	        display: 'inline-block',
 	        textAlign: 'center'
@@ -75774,7 +75801,32 @@
 	};
 	
 	// item
-	var itemStyle = {};
+	var itemStyle = (_itemStyle = {
+	    width: '100%',
+	    backgroundColor: _AppStyle.stringBgColor,
+	    tableLayout: 'fixed'
+	}, _defineProperty(_itemStyle, 'width', 1), _defineProperty(_itemStyle, 'overflowWrap', 'break-word'), _defineProperty(_itemStyle, 'borderCollapse', 'collapse'), _defineProperty(_itemStyle, 'textAlign', 'center'), _defineProperty(_itemStyle, 'rowStyle', {
+	    borderBottom: '2px dashed rgba(125,125,0,0.5)'
+	}), _defineProperty(_itemStyle, 'imgStyle', {
+	    width: 180,
+	    padding: 20
+	}), _defineProperty(_itemStyle, 'nameStyle', {
+	    width: 680,
+	    titleStyle: {
+	        fontSize: 15,
+	        textAlign: 'left',
+	        marginLeft: 13
+	    },
+	    colorStyle: {
+	        fontSize: 12,
+	        color: 'rgba(93,175,174)',
+	        marginLeft: 19
+	    }
+	}), _defineProperty(_itemStyle, 'numStyle', {
+	    width: 40
+	}), _defineProperty(_itemStyle, 'statusStyle', {
+	    width: 300
+	}), _itemStyle);
 	
 	exports.searchStyle = searchStyle;
 	exports.userStyle = userStyle;

@@ -87,7 +87,7 @@ class OrderInfoComponent extends React.Component {
         return (
             <div style={orderStyle}>
                 <div style={orderStyle.numberStyle}>{"订单编号     " + this.props.number}</div>
-                <div style={orderStyle.timeStyle}>{this.props.pay_time}</div>
+                <div style={orderStyle.timeStyle}>{"付款时间     " + this.props.pay_time}</div>
                 <div style={orderStyle.reserveQStyle}>{"预留"}</div>
             </div>
         )
@@ -95,16 +95,40 @@ class OrderInfoComponent extends React.Component {
 }
 
 class ItemComponent extends React.Component {
+
+    itemTBUrl() {
+        return "https://item.taobao.com/item.htm?id=" + this.props.itemid;
+    }
+
     render() {
         return (
-            <div style={itemStyle}>
-                <img src={this.props.imgUrl}/>
-                <div>{this.props.title}</div>
-                <div>{this.props.color}</div>
-                <div>{this.props.q}</div>
-                <div>{this.props.status}</div>
-                <div>{this.props.avail_q}</div>
-            </div>
+            <table style={itemStyle}>
+                <tr style={itemStyle.rowStyle}>
+                    <td style={itemStyle.imgStyle}>
+                        <a href={this.itemTBUrl()} style="width: inherit">
+                            <img src={this.props.imgUrl} style="width: inherit;height: auto">
+                            </img>
+                        </a>
+                    </td>
+                    <td style={itemStyle.nameStyle}>
+                        <p style={itemStyle.nameStyle.titleStyle}>
+                            {this.props.title}
+                        </p>
+                        <p style={itemStyle.nameStyle.colorStyle}>
+                            {this.props.color}
+                        </p>
+                    </td>
+                    <td style={itemStyle.numStyle}>
+                        {this.props.q}
+                    </td>
+                    <td style={itemStyle.statusStyle}>
+                        {this.props.status}
+                    </td>
+                    <td style={itemStyle.numStyle}>
+                        {this.props.avail_q}
+                    </td>
+                </tr>
+            </table>
         );
     }
 }

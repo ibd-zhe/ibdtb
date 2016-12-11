@@ -37,7 +37,8 @@ const searchStyle = {
 
 const userStyle = {
     marginLeft: titleStyle.left,
-    marginTop: 5
+    marginTop: 5,
+    marginBottom: 50
 };
 
 
@@ -55,14 +56,14 @@ const orderStyle = {
     },
 
     timeStyle: {
-        marginLeft: 20,
+        marginLeft: 70,
         height: '100%',
         display: 'inline-block',
         textAlign: 'center'
     },
 
     reserveQStyle: {
-        marginLeft: 500,
+        marginLeft: 750,
         height: '100%',
         display: 'inline-block',
         textAlign: 'center'
@@ -71,7 +72,39 @@ const orderStyle = {
 
 // item
 const itemStyle = {
-
+    width: '100%',
+    backgroundColor: stringBgColor,
+    tableLayout: 'fixed',
+    width: 1,
+    overflowWrap: 'break-word',
+    borderCollapse: 'collapse',
+    textAlign: 'center',
+    rowStyle: {
+        borderBottom: '2px dashed rgba(125,125,0,0.5)'
+    },
+    imgStyle: {
+        width: 180,
+        padding: 20
+    },
+    nameStyle: {
+        width: 680,
+        titleStyle: {
+            fontSize: 15,
+            textAlign: 'left',
+            marginLeft: 13,
+        },
+        colorStyle: {
+            fontSize: 12,
+            color: 'rgba(93,175,174)',
+            marginLeft: 19
+        }
+    },
+    numStyle: {
+        width: 40
+    },
+    statusStyle: {
+        width: 300
+    }
 };
 
 export {searchStyle, userStyle, orderStyle, itemStyle};

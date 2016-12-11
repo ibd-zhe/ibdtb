@@ -3,7 +3,7 @@
 const host = "http://54.223.65.44:8100/static/";
 const bgImgUrl = host + "image/ibd/bg";
 const svgUrl = {
-    searchSvg: host + "file/search.svg"
+    searchSvg: host + "file/svg/search.svg"
 };
 
 const stringBgColor = 'rgba(54, 54, 54, 0.64)';
@@ -20,7 +20,7 @@ const appStyle = {
     height: '100%',
 
     // font
-    fontFamily: 'Lato, SimHei, 黑体',
+    fontFamily: 'Lato, SimHei',
 
     // color
     color: 'rgb(90%, 90%, 90%)',
@@ -38,14 +38,15 @@ const titleBarStyle = {
     backgroundColor: stringBgColor,
     width: '100%',
     position: 'relative',
-    flex: '0 1 auto'
+    flex: '0 1 auto',
+    fontFamily: 'Lato, YueHei'
 };
 
 const titleStyle = {
     position: 'absolute',
     top: '50%',
     transform: 'translateY(-50%)',
-    left: 40,
+    left: 30,
     fontSize: 30
 };
 
