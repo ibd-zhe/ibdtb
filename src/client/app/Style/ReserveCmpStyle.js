@@ -46,7 +46,7 @@ const userStyle = {
 const orderStyle = {
     width: '100%',
     height: 60,
-    backgroundColor: 'rgba(%43,%43,%43,0.67)',
+    backgroundColor: 'rgba(110,110,110,0.67)',
 
     numberStyle: {
         marginLeft: userStyle.marginLeft,
@@ -72,7 +72,6 @@ const orderStyle = {
 
 // item
 const itemStyle = {
-    width: '100%',
     backgroundColor: stringBgColor,
     tableLayout: 'fixed',
     width: 1,
@@ -83,7 +82,8 @@ const itemStyle = {
         borderBottom: '2px dashed rgba(125,125,0,0.5)'
     },
     imgStyle: {
-        width: 180,
+        width: 150,
+        height: 80,
         padding: 20
     },
     nameStyle: {
@@ -95,7 +95,7 @@ const itemStyle = {
         },
         colorStyle: {
             fontSize: 12,
-            color: 'rgba(93,175,174)',
+            color: 'rgb(93,175,174)',
             marginLeft: 19
         }
     },
@@ -104,6 +104,9 @@ const itemStyle = {
     },
     statusStyle: {
         width: 300
+    },
+    reserveStyle: {
+
     }
 };
 

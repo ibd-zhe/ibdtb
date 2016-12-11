@@ -106,8 +106,8 @@ class ItemComponent extends React.Component {
                 <tbody>
                 <tr style={itemStyle.rowStyle}>
                     <td style={itemStyle.imgStyle}>
-                        <a href={this.itemTBUrl()} style={{width: "inherit"}}>
-                            <img src={this.props.imgUrl} style={{width: 'inherit', height: 'auto'}}>
+                        <a href={this.itemTBUrl()} style={{height: "inherit"}}>
+                            <img src={this.props.imgUrl} style={{height: 'inherit', width: 'auto'}}>
                             </img>
                         </a>
                     </td>

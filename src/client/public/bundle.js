@@ -23721,45 +23721,49 @@
 	                'table',
 	                { style: _ReserveCmpStyle.itemStyle },
 	                _react2.default.createElement(
-	                    'tr',
-	                    { style: _ReserveCmpStyle.itemStyle.rowStyle },
+	                    'tbody',
+	                    null,
 	                    _react2.default.createElement(
-	                        'td',
-	                        { style: _ReserveCmpStyle.itemStyle.imgStyle },
+	                        'tr',
+	                        { style: _ReserveCmpStyle.itemStyle.rowStyle },
 	                        _react2.default.createElement(
-	                            'a',
-	                            { href: this.itemTBUrl(), style: 'width: inherit' },
-	                            _react2.default.createElement('img', { src: this.props.imgUrl, style: 'width: inherit;height: auto' })
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'td',
-	                        { style: _ReserveCmpStyle.itemStyle.nameStyle },
-	                        _react2.default.createElement(
-	                            'p',
-	                            { style: _ReserveCmpStyle.itemStyle.nameStyle.titleStyle },
-	                            this.props.title
+	                            'td',
+	                            { style: _ReserveCmpStyle.itemStyle.imgStyle },
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: this.itemTBUrl(), style: { height: "inherit" } },
+	                                _react2.default.createElement('img', { src: this.props.imgUrl, style: { height: 'inherit', width: 'auto' } })
+	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            'p',
-	                            { style: _ReserveCmpStyle.itemStyle.nameStyle.colorStyle },
-	                            this.props.color
+	                            'td',
+	                            { style: _ReserveCmpStyle.itemStyle.nameStyle },
+	                            _react2.default.createElement(
+	                                'p',
+	                                { style: _ReserveCmpStyle.itemStyle.nameStyle.titleStyle },
+	                                this.props.title
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                { style: _ReserveCmpStyle.itemStyle.nameStyle.colorStyle },
+	                                this.props.color
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'td',
+	                            { style: _ReserveCmpStyle.itemStyle.numStyle },
+	                            this.props.q
+	                        ),
+	                        _react2.default.createElement(
+	                            'td',
+	                            { style: _ReserveCmpStyle.itemStyle.statusStyle },
+	                            this.props.status
+	                        ),
+	                        _react2.default.createElement(
+	                            'td',
+	                            { style: _ReserveCmpStyle.itemStyle.numStyle },
+	                            this.props.avail_q
 	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'td',
-	                        { style: _ReserveCmpStyle.itemStyle.numStyle },
-	                        this.props.q
-	                    ),
-	                    _react2.default.createElement(
-	                        'td',
-	                        { style: _ReserveCmpStyle.itemStyle.statusStyle },
-	                        this.props.status
-	                    ),
-	                    _react2.default.createElement(
-	                        'td',
-	                        { style: _ReserveCmpStyle.itemStyle.numStyle },
-	                        this.props.avail_q
 	                    )
 	                )
 	            );
@@ -75727,11 +75731,7 @@
 	});
 	exports.itemStyle = exports.orderStyle = exports.userStyle = exports.searchStyle = undefined;
 	
-	var _itemStyle;
-	
 	var _AppStyle = __webpack_require__(/*! ./AppStyle.js */ 185);
-	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var searchHeight = 40;
 	
@@ -75776,7 +75776,7 @@
 	var orderStyle = {
 	    width: '100%',
 	    height: 60,
-	    backgroundColor: 'rgba(%43,%43,%43,0.67)',
+	    backgroundColor: 'rgba(110,110,110,0.67)',
 	
 	    numberStyle: {
 	        marginLeft: userStyle.marginLeft,
@@ -75801,32 +75801,42 @@
 	};
 	
 	// item
-	var itemStyle = (_itemStyle = {
-	    width: '100%',
+	var itemStyle = {
 	    backgroundColor: _AppStyle.stringBgColor,
-	    tableLayout: 'fixed'
-	}, _defineProperty(_itemStyle, 'width', 1), _defineProperty(_itemStyle, 'overflowWrap', 'break-word'), _defineProperty(_itemStyle, 'borderCollapse', 'collapse'), _defineProperty(_itemStyle, 'textAlign', 'center'), _defineProperty(_itemStyle, 'rowStyle', {
-	    borderBottom: '2px dashed rgba(125,125,0,0.5)'
-	}), _defineProperty(_itemStyle, 'imgStyle', {
-	    width: 180,
-	    padding: 20
-	}), _defineProperty(_itemStyle, 'nameStyle', {
-	    width: 680,
-	    titleStyle: {
-	        fontSize: 15,
-	        textAlign: 'left',
-	        marginLeft: 13
+	    tableLayout: 'fixed',
+	    width: 1,
+	    overflowWrap: 'break-word',
+	    borderCollapse: 'collapse',
+	    textAlign: 'center',
+	    rowStyle: {
+	        borderBottom: '2px dashed rgba(125,125,0,0.5)'
 	    },
-	    colorStyle: {
-	        fontSize: 12,
-	        color: 'rgba(93,175,174)',
-	        marginLeft: 19
-	    }
-	}), _defineProperty(_itemStyle, 'numStyle', {
-	    width: 40
-	}), _defineProperty(_itemStyle, 'statusStyle', {
-	    width: 300
-	}), _itemStyle);
+	    imgStyle: {
+	        width: 150,
+	        height: 80,
+	        padding: 20
+	    },
+	    nameStyle: {
+	        width: 680,
+	        titleStyle: {
+	            fontSize: 15,
+	            textAlign: 'left',
+	            marginLeft: 13
+	        },
+	        colorStyle: {
+	            fontSize: 12,
+	            color: 'rgb(93,175,174)',
+	            marginLeft: 19
+	        }
+	    },
+	    numStyle: {
+	        width: 40
+	    },
+	    statusStyle: {
+	        width: 300
+	    },
+	    reserveStyle: {}
+	};
 	
 	exports.searchStyle = searchStyle;
 	exports.userStyle = userStyle;
