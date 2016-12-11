@@ -103,10 +103,11 @@ class ItemComponent extends React.Component {
     render() {
         return (
             <table style={itemStyle}>
+                <tbody>
                 <tr style={itemStyle.rowStyle}>
                     <td style={itemStyle.imgStyle}>
-                        <a href={this.itemTBUrl()} style="width: inherit">
-                            <img src={this.props.imgUrl} style="width: inherit;height: auto">
+                        <a href={this.itemTBUrl()} style={{width: "inherit"}}>
+                            <img src={this.props.imgUrl} style={{width: 'inherit', height: 'auto'}}>
                             </img>
                         </a>
                     </td>
@@ -128,6 +129,7 @@ class ItemComponent extends React.Component {
                         {this.props.avail_q}
                     </td>
                 </tr>
+                </tbody>
             </table>
         );
     }
