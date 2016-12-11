@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'YueHei';
-    src: url('http://54.223.65.44:8100/static/file/font/MFYueHei-light.ttf');
+    src: url('http://54.223.65.44:8100/static/file/font/MFYueHei-light.woff') format('woff');
 }
 
 body {
