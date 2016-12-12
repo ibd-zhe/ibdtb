@@ -81,11 +81,15 @@ class OrderComponent extends React.Component {
 class OrderInfoComponent extends React.Component {
     render() {
         return (
-            <div style={orderStyle}>
-                <div style={orderStyle.numberStyle}>{"订单编号     " + this.props.number}</div>
-                <div style={orderStyle.timeStyle}>{"付款时间     " + this.props.pay_time}</div>
-                <div style={orderStyle.reserveQStyle}>{"预留"}</div>
-            </div>
+            <table style={orderStyle}>
+                <tbody>
+                <tr>
+                    <td style={orderStyle.numberStyle}>{"订单编号     " + this.props.number}</td>
+                    <td style={orderStyle.timeStyle}>{"付款时间     " + this.props.pay_time}</td>
+                    <td style={orderStyle.reserveQStyle}>{"预留"}</td>
+                </tr>
+                </tbody>
+            </table>
         );
     }
 }

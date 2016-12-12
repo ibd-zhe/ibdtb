@@ -49,26 +49,23 @@ const orderStyle = {
     width: '100%',
     height: 60,
     backgroundColor: 'rgba(110,110,110,0.67)',
+    textAlign: 'left',
+    borderCollapse: 'collapse',
+    tableLayout: 'fixed',
 
     numberStyle: {
-        marginLeft: userStyle.marginLeft,
-        height: '100%',
-        display: 'inline-block',
-        textAlign: 'center'
+        paddingLeft: userStyle.marginLeft,
+        width: 225
     },
 
     timeStyle: {
-        marginLeft: 70,
-        height: '100%',
-        display: 'inline-block',
-        textAlign: 'center'
+        paddingLeft: 50,
+        width: 200
     },
 
     reserveQStyle: {
-        marginLeft: 750,
-        height: '100%',
-        display: 'inline-block',
-        textAlign: 'center'
+        textAlign: 'right',
+        paddingRight: 100
     }
 };
 
@@ -79,23 +76,27 @@ const itemStyle = {
     width: '100%',
     overflowWrap: 'break-word',
     borderCollapse: 'collapse',
-    textAlign: 'center',
+    textAlign: 'left',
+    borderStyle: 'hidden',
+
     rowStyle: {
-        borderBottom: '2px dashed rgba(125,125,0,0.5)'
+        borderBottom: '2px solid rgba(187,129,151,0.5)'
     },
+
     imgStyle: {
         // width is for div
         width: 150,
 
         // height is for img
         height: 80,
-        padding: 10
+        paddingTop: 15,
+        paddingBottom: 15,
+        paddingLeft: orderStyle.numberStyle.paddingLeft
     },
+
     nameStyle: {
-        width: 680,
         titleStyle: {
             fontSize: 15,
-            textAlign: 'left',
             marginLeft: 13,
         },
         colorStyle: {
@@ -105,14 +106,10 @@ const itemStyle = {
         }
     },
     numStyle: {
-        width: 40
     },
     statusStyle: {
-        width: 300
     },
-    reserveStyle: {
-
-    }
+    reserveStyle: orderStyle.reserveQStyle
 };
 
 export {searchStyle, userStyle, orderStyle, itemStyle, bridgeStyle};

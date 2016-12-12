@@ -23480,14 +23480,12 @@
 	    left: '60%',
 	    height: '100%',
 	    borderSpacing: '40px 0',
-	    borderCollapse: 'seperate'
-	};
-	
-	var tabStyle = {
+	    borderCollapse: 'seperate',
 	    textAlign: 'center',
-	    verticalAlign: 'middle',
 	    fontSize: 18
 	};
+	
+	var tabStyle = {};
 	
 	exports.appStyle = appStyle;
 	exports.titleBarStyle = titleBarStyle;
@@ -23664,22 +23662,30 @@
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'div',
+	                'table',
 	                { style: _ReserveCmpStyle.orderStyle },
 	                _react2.default.createElement(
-	                    'div',
-	                    { style: _ReserveCmpStyle.orderStyle.numberStyle },
-	                    "订单编号     " + this.props.number
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { style: _ReserveCmpStyle.orderStyle.timeStyle },
-	                    "付款时间     " + this.props.pay_time
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { style: _ReserveCmpStyle.orderStyle.reserveQStyle },
-	                    "预留"
+	                    'tbody',
+	                    null,
+	                    _react2.default.createElement(
+	                        'tr',
+	                        null,
+	                        _react2.default.createElement(
+	                            'td',
+	                            { style: _ReserveCmpStyle.orderStyle.numberStyle },
+	                            "订单编号     " + this.props.number
+	                        ),
+	                        _react2.default.createElement(
+	                            'td',
+	                            { style: _ReserveCmpStyle.orderStyle.timeStyle },
+	                            "付款时间     " + this.props.pay_time
+	                        ),
+	                        _react2.default.createElement(
+	                            'td',
+	                            { style: _ReserveCmpStyle.orderStyle.reserveQStyle },
+	                            "预留"
+	                        )
+	                    )
 	                )
 	            );
 	        }
@@ -75769,26 +75775,23 @@
 	    width: '100%',
 	    height: 60,
 	    backgroundColor: 'rgba(110,110,110,0.67)',
+	    textAlign: 'left',
+	    borderCollapse: 'collapse',
+	    tableLayout: 'fixed',
 	
 	    numberStyle: {
-	        marginLeft: userStyle.marginLeft,
-	        height: '100%',
-	        display: 'inline-block',
-	        textAlign: 'center'
+	        paddingLeft: userStyle.marginLeft,
+	        width: 225
 	    },
 	
 	    timeStyle: {
-	        marginLeft: 70,
-	        height: '100%',
-	        display: 'inline-block',
-	        textAlign: 'center'
+	        paddingLeft: 50,
+	        width: 200
 	    },
 	
 	    reserveQStyle: {
-	        marginLeft: 750,
-	        height: '100%',
-	        display: 'inline-block',
-	        textAlign: 'center'
+	        textAlign: 'right',
+	        paddingRight: 100
 	    }
 	};
 	
@@ -75799,23 +75802,27 @@
 	    width: '100%',
 	    overflowWrap: 'break-word',
 	    borderCollapse: 'collapse',
-	    textAlign: 'center',
+	    textAlign: 'left',
+	    borderStyle: 'hidden',
+	
 	    rowStyle: {
-	        borderBottom: '2px dashed rgba(125,125,0,0.5)'
+	        borderBottom: '2px solid rgba(187,129,151,0.5)'
 	    },
+	
 	    imgStyle: {
 	        // width is for div
 	        width: 150,
 	
 	        // height is for img
 	        height: 80,
-	        padding: 10
+	        paddingTop: 15,
+	        paddingBottom: 15,
+	        paddingLeft: orderStyle.numberStyle.paddingLeft
 	    },
+	
 	    nameStyle: {
-	        width: 680,
 	        titleStyle: {
 	            fontSize: 15,
-	            textAlign: 'left',
 	            marginLeft: 13
 	        },
 	        colorStyle: {
@@ -75824,13 +75831,9 @@
 	            marginLeft: 19
 	        }
 	    },
-	    numStyle: {
-	        width: 40
-	    },
-	    statusStyle: {
-	        width: 300
-	    },
-	    reserveStyle: {}
+	    numStyle: {},
+	    statusStyle: {},
+	    reserveStyle: orderStyle.reserveQStyle
 	};
 	
 	exports.searchStyle = searchStyle;

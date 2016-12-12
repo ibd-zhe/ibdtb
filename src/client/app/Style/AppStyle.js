@@ -49,13 +49,12 @@ const tabBarStyle = {
     left: '60%',
     height: '100%',
     borderSpacing: '40px 0',
-    borderCollapse: 'seperate'
+    borderCollapse: 'seperate',
+    textAlign: 'center',
+    fontSize: 18,
 };
 
 const tabStyle = {
-    textAlign: 'center',
-    verticalAlign: 'middle',
-    fontSize: 18,
 };
 
 
