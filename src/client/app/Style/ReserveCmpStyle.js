@@ -33,7 +33,9 @@ const searchStyle = {
     }
 };
 
-
+const bridgeStyle = {
+    width: '100%'
+};
 
 const userStyle = {
     marginLeft: titleStyle.left,
@@ -74,7 +76,7 @@ const orderStyle = {
 const itemStyle = {
     backgroundColor: stringBgColor,
     tableLayout: 'fixed',
-    width: 1,
+    width: '100%',
     overflowWrap: 'break-word',
     borderCollapse: 'collapse',
     textAlign: 'center',
@@ -82,9 +84,12 @@ const itemStyle = {
         borderBottom: '2px dashed rgba(125,125,0,0.5)'
     },
     imgStyle: {
+        // width is for div
         width: 150,
+
+        // height is for img
         height: 80,
-        padding: 20
+        padding: 10
     },
     nameStyle: {
         width: 680,
@@ -110,4 +115,4 @@ const itemStyle = {
     }
 };
 
-export {searchStyle, userStyle, orderStyle, itemStyle};
+export {searchStyle, userStyle, orderStyle, itemStyle, bridgeStyle};

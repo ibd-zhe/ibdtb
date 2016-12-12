@@ -22,14 +22,8 @@ const appStyle = {
     // font
     fontFamily: 'Lato, SimHei',
 
-    // color
+    // text color
     color: 'rgb(90%, 90%, 90%)',
-    display: 'flex',
-    flexFlow: 'column'
-};
-
-const contentStyle = {
-    flex: '1 0 auto'
 };
 
 // tabBar
@@ -66,5 +60,5 @@ const tabStyle = {
 
 
 
-export {appStyle, titleBarStyle, titleStyle, tabBarStyle, tabStyle, stringBgColor, contentStyle, svgUrl};
+export {appStyle, titleBarStyle, titleStyle, tabBarStyle, tabStyle, stringBgColor, svgUrl};
 

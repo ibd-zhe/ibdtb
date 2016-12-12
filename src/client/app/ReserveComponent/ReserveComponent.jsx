@@ -1,11 +1,7 @@
-/**
- * Created by jiangjiang on 05/12/2016.
- */
 import React from 'react';
 import SearchComponent from '../UIComponent/SearchComponent.jsx'
 import orderByUser from '../Model/IbdDb.js'
-import {searchStyle, userStyle, orderStyle, itemStyle} from '../Style/ReserveCmpStyle.js'
-import {contentStyle} from '../Style/AppStyle.js'
+import {searchStyle, userStyle, orderStyle, itemStyle, bridgeStyle} from '../Style/ReserveCmpStyle.js'
 
 class ReserveComponent extends React.Component{
     constructor(props) {
@@ -33,7 +29,7 @@ class ReserveComponent extends React.Component{
 
     render() {
         return (
-            <div style={contentStyle}>
+            <div style={bridgeStyle}>
                 <SearchComponent search={this.search} style={searchStyle} placeholder="请输入上帝id"/>
                 <UserComponent content={this.state.content}/>
             </div>
@@ -55,7 +51,7 @@ class UserComponent extends React.Component {
         }
         else {
             return (
-                <div>
+                <div style={bridgeStyle}>
                     <div style={userStyle}>{this.props.content.user_id}</div>
                     {this.orders()}
                 </div>
@@ -74,7 +70,7 @@ class OrderComponent extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={bridgeStyle}>
                 <OrderInfoComponent number={this.props.number} pay_time={this.props.pay_time}/>
                 {this.items()}
             </div>
@@ -90,7 +86,7 @@ class OrderInfoComponent extends React.Component {
                 <div style={orderStyle.timeStyle}>{"付款时间     " + this.props.pay_time}</div>
                 <div style={orderStyle.reserveQStyle}>{"预留"}</div>
             </div>
-        )
+        );
     }
 }
 
