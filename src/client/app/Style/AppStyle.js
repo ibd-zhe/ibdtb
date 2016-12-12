@@ -24,7 +24,7 @@ const appStyle = {
 
     // text color
     color: 'rgb(90%, 90%, 90%)',
-    overflow: 'hidden'
+    overflow: 'scroll'
 };
 
 // tabBar

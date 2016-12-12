@@ -34,7 +34,7 @@ const searchStyle = {
 };
 
 const bridgeStyle = {
-    width: '100%'
+    width: '100%',
 };
 
 const userStyle = {
