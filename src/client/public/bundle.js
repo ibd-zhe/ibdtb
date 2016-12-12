@@ -23453,14 +23453,8 @@
 	    // font
 	    fontFamily: 'Lato, SimHei',
 	
-	    // color
-	    color: 'rgb(90%, 90%, 90%)',
-	    display: 'flex',
-	    flexFlow: 'column'
-	};
-	
-	var contentStyle = {
-	    flex: '1 0 auto'
+	    // text color
+	    color: 'rgb(90%, 90%, 90%)'
 	};
 	
 	// tabBar
@@ -23501,7 +23495,6 @@
 	exports.tabBarStyle = tabBarStyle;
 	exports.tabStyle = tabStyle;
 	exports.stringBgColor = stringBgColor;
-	exports.contentStyle = contentStyle;
 	exports.svgUrl = svgUrl;
 
 /***/ },
@@ -23533,18 +23526,13 @@
 	
 	var _ReserveCmpStyle = __webpack_require__(/*! ../Style/ReserveCmpStyle.js */ 389);
 	
-	var _AppStyle = __webpack_require__(/*! ../Style/AppStyle.js */ 185);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by jiangjiang on 05/12/2016.
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var ReserveComponent = function (_React$Component) {
 	    _inherits(ReserveComponent, _React$Component);
@@ -23583,7 +23571,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { style: _AppStyle.contentStyle },
+	                { style: _ReserveCmpStyle.bridgeStyle },
 	                _react2.default.createElement(_SearchComponent2.default, { search: this.search, style: _ReserveCmpStyle.searchStyle, placeholder: '\u8BF7\u8F93\u5165\u4E0A\u5E1Did' }),
 	                _react2.default.createElement(UserComponent, { content: this.state.content })
 	            );
@@ -23617,7 +23605,7 @@
 	            } else {
 	                return _react2.default.createElement(
 	                    'div',
-	                    null,
+	                    { style: _ReserveCmpStyle.bridgeStyle },
 	                    _react2.default.createElement(
 	                        'div',
 	                        { style: _ReserveCmpStyle.userStyle },
@@ -23653,7 +23641,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
+	                { style: _ReserveCmpStyle.bridgeStyle },
 	                _react2.default.createElement(OrderInfoComponent, { number: this.props.number, pay_time: this.props.pay_time }),
 	                this.items()
 	            );
@@ -75729,7 +75717,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.itemStyle = exports.orderStyle = exports.userStyle = exports.searchStyle = undefined;
+	exports.bridgeStyle = exports.itemStyle = exports.orderStyle = exports.userStyle = exports.searchStyle = undefined;
 	
 	var _AppStyle = __webpack_require__(/*! ./AppStyle.js */ 185);
 	
@@ -75764,6 +75752,10 @@
 	        transform: 'translateY(-50%)',
 	        filter: 'grayscale(54%)'
 	    }
+	};
+	
+	var bridgeStyle = {
+	    width: '100%'
 	};
 	
 	var userStyle = {
@@ -75804,7 +75796,7 @@
 	var itemStyle = {
 	    backgroundColor: _AppStyle.stringBgColor,
 	    tableLayout: 'fixed',
-	    width: 1,
+	    width: '100%',
 	    overflowWrap: 'break-word',
 	    borderCollapse: 'collapse',
 	    textAlign: 'center',
@@ -75812,9 +75804,12 @@
 	        borderBottom: '2px dashed rgba(125,125,0,0.5)'
 	    },
 	    imgStyle: {
+	        // width is for div
 	        width: 150,
+	
+	        // height is for img
 	        height: 80,
-	        padding: 20
+	        padding: 10
 	    },
 	    nameStyle: {
 	        width: 680,
@@ -75842,6 +75837,7 @@
 	exports.userStyle = userStyle;
 	exports.orderStyle = orderStyle;
 	exports.itemStyle = itemStyle;
+	exports.bridgeStyle = bridgeStyle;
 
 /***/ }
 /******/ ]);
