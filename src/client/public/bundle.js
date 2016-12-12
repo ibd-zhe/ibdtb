@@ -23454,7 +23454,8 @@
 	    fontFamily: 'Lato, SimHei',
 	
 	    // text color
-	    color: 'rgb(90%, 90%, 90%)'
+	    color: 'rgb(90%, 90%, 90%)',
+	    overflow: 'hidden'
 	};
 	
 	// tabBar
@@ -23463,7 +23464,6 @@
 	    backgroundColor: stringBgColor,
 	    width: '100%',
 	    position: 'relative',
-	    flex: '0 1 auto',
 	    fontFamily: 'Lato, YueHei'
 	};
 	
