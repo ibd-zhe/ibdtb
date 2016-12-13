@@ -11,6 +11,7 @@ const searchStyle = {
         borderRadius: searchHeight,
         backgroundColor: stringBgColor,
     },
+
     inputStyle: {
         borderRadius: 40,
         width: '80%',
@@ -21,6 +22,7 @@ const searchStyle = {
         color: 'rgb(80%, 80%, 80%)',
         borderStyle: 'none'
     },
+
     submitStyle: {
         imgUrl: svgUrl.searchSvg,
         borderStyle: 'none',
@@ -134,6 +136,7 @@ const itemStyle = {
     },
 
     statusStyle: {
+        fontSize: 13,
         width: itemChildWidth.status,
         textAlign: 'middle',
         marginLeft: margin

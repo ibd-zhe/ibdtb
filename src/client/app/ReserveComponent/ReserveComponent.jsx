@@ -63,9 +63,9 @@ class UserComponent extends React.Component {
 class OrderComponent extends React.Component {
 
     items() {
-        return this.props.items.map((item) =>
-            <ItemComponent key={item.id} imgUrl={item.imgUrl} title={item.title} color={item.color} q={item.num} status={item.status} avail_q={item.avail_q}/>
-        );
+        return this.props.items.map((item, index) =>
+                    <ItemComponent key={item.id} imgUrl={item.imgUrl} title={item.title} color={item.color} q={item.num} status={item.status} avail_q={item.avail_q} last={index===this.props.items.length}/>
+                );
     }
 
     render() {
@@ -100,37 +100,53 @@ class ItemComponent extends React.Component {
         return "https://item.taobao.com/item.htm?id=" + this.props.itemid;
     }
 
-    render() {
+    content() {
         return (
-                <div style={itemStyle}>
-                    <div style={itemStyle.imgStyle}>
-                        <a href={this.itemTBUrl()} style={{height: "inherit"}}>
-                            <img src={this.props.imgUrl} style={{height: 'inherit', width: 'auto'}}>
-                            </img>
-                        </a>
-                    </div>
-
-                    <p style={itemStyle.titleStyle}>
-                        {this.props.title}
-                    </p>
-
-                    <p style={itemStyle.colorStyle}>
-                        {this.props.color}
-                    </p>
-
-                    <p style={itemStyle.numStyle}>
-                        {this.props.q}
-                    </p>
-
-                    <p style={itemStyle.statusStyle}>
-                        {this.props.status}
-                    </p>
-
-                    <p style={itemStyle.numStyle}>
-                        {this.props.avail_q}
-                    </p>
+            <div style={itemStyle}>
+                <div style={itemStyle.imgStyle}>
+                    <a href={this.itemTBUrl()} style={{height: "inherit"}}>
+                        <img src={this.props.imgUrl} style={{height: 'inherit', width: 'auto'}}>
+                        </img>
+                    </a>
                 </div>
+
+                <p style={itemStyle.titleStyle}>
+                    {this.props.title}
+                </p>
+
+                <p style={itemStyle.colorStyle}>
+                    {this.props.color}
+                </p>
+
+                <p style={itemStyle.numStyle}>
+                    {this.props.q}
+                </p>
+
+                <p style={itemStyle.statusStyle}>
+                    {this.props.status}
+                </p>
+
+                <p style={itemStyle.numStyle}>
+                    {this.props.avail_q}
+                </p>
+            </div>
         );
+    }
+
+    render() {
+        if (this.props.last === true) {
+            return (
+                <div style={{width: '100%'}}>
+                    {this.content()}
+                    <svg style={{width: '100%',stroke: 'rgba(0,34,78,0.4)',strokeasharray: '8 8', strokeidth: '3'}}>
+                        <line x1="0%" y1="0%" x2="100%" y2="0%"/>
+                    </svg>
+                </div>
+            );
+        } else {
+            return this.content()
+        }
+
     }
 }
 

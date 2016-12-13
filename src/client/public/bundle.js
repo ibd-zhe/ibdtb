@@ -23630,8 +23630,10 @@
 	    _createClass(OrderComponent, [{
 	        key: 'items',
 	        value: function items() {
-	            return this.props.items.map(function (item) {
-	                return _react2.default.createElement(ItemComponent, { key: item.id, imgUrl: item.imgUrl, title: item.title, color: item.color, q: item.num, status: item.status, avail_q: item.avail_q });
+	            var _this4 = this;
+	
+	            return this.props.items.map(function (item, index) {
+	                return _react2.default.createElement(ItemComponent, { key: item.id, imgUrl: item.imgUrl, title: item.title, color: item.color, q: item.num, status: item.status, avail_q: item.avail_q, last: index === _this4.props.items.length });
 	            });
 	        }
 	    }, {
@@ -23709,8 +23711,8 @@
 	            return "https://item.taobao.com/item.htm?id=" + this.props.itemid;
 	        }
 	    }, {
-	        key: 'render',
-	        value: function render() {
+	        key: 'content',
+	        value: function content() {
 	            return _react2.default.createElement(
 	                'div',
 	                { style: _ReserveCmpStyle.itemStyle },
@@ -23749,6 +23751,24 @@
 	                    this.props.avail_q
 	                )
 	            );
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            if (this.props.last === true) {
+	                return _react2.default.createElement(
+	                    'div',
+	                    { style: { width: '100%' } },
+	                    this.content(),
+	                    _react2.default.createElement(
+	                        'svg',
+	                        { style: { width: '100%', stroke: 'rgba(0,34,78,0.4)', strokeasharray: '8 8', strokeidth: '3' } },
+	                        _react2.default.createElement('line', { x1: '0%', y1: '0%', x2: '100%', y2: '0%' })
+	                    )
+	                );
+	            } else {
+	                return this.content();
+	            }
 	        }
 	    }]);
 	
@@ -75726,6 +75746,7 @@
 	        borderRadius: searchHeight,
 	        backgroundColor: _AppStyle.stringBgColor
 	    },
+	
 	    inputStyle: {
 	        borderRadius: 40,
 	        width: '80%',
@@ -75736,6 +75757,7 @@
 	        color: 'rgb(80%, 80%, 80%)',
 	        borderStyle: 'none'
 	    },
+	
 	    submitStyle: {
 	        imgUrl: _AppStyle.svgUrl.searchSvg,
 	        borderStyle: 'none',
@@ -75846,6 +75868,7 @@
 	    },
 	
 	    statusStyle: {
+	        fontSize: 13,
 	        width: itemChildWidth.status,
 	        textAlign: 'middle',
 	        marginLeft: margin
