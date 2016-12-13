@@ -110,17 +110,13 @@ class ItemComponent extends React.Component {
                         </a>
                     </div>
 
-                    <div style={itemStyle.titleStyle}>
-                        <p style={itemStyle.pStyle}>
-                            {this.props.title}
-                        </p>
-                    </div>
+                    <p style={itemStyle.titleStyle}>
+                        {this.props.title}
+                    </p>
 
-                    <div style={itemStyle.colorStyle}>
-                        <p style={itemStyle.pStyle}>
-                            {this.props.color}
-                        </p>
-                    </div>
+                    <p style={itemStyle.colorStyle}>
+                        {this.props.color}
+                    </p>
 
                     <p style={itemStyle.numStyle}>
                         {this.props.q}

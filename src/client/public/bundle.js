@@ -23464,7 +23464,7 @@
 	    backgroundColor: stringBgColor,
 	    width: '100%',
 	    position: 'relative',
-	    fontFamily: 'Lato, Yue'
+	    fontFamily: 'Lato, YueHei '
 	};
 	
 	var titleStyle = {
@@ -23724,22 +23724,14 @@
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    'div',
+	                    'p',
 	                    { style: _ReserveCmpStyle.itemStyle.titleStyle },
-	                    _react2.default.createElement(
-	                        'p',
-	                        { style: _ReserveCmpStyle.itemStyle.pStyle },
-	                        this.props.title
-	                    )
+	                    this.props.title
 	                ),
 	                _react2.default.createElement(
-	                    'div',
+	                    'p',
 	                    { style: _ReserveCmpStyle.itemStyle.colorStyle },
-	                    _react2.default.createElement(
-	                        'p',
-	                        { style: _ReserveCmpStyle.itemStyle.pStyle },
-	                        this.props.color
-	                    )
+	                    this.props.color
 	                ),
 	                _react2.default.createElement(
 	                    'p',
@@ -75836,7 +75828,7 @@
 	        fontSize: 14,
 	        width: itemChildWidth.title,
 	        marginLeft: margin,
-	        textAlign: 'center'
+	        textAlign: 'left'
 	    },
 	
 	    colorStyle: {
@@ -75844,11 +75836,6 @@
 	        color: 'rgb(93,175,174)',
 	        marginLeft: margin,
 	        width: itemChildWidth.color,
-	        textAlign: 'center'
-	    },
-	
-	    pStyle: {
-	        display: 'inline-block',
 	        textAlign: 'left'
 	    },
 	

@@ -116,7 +116,7 @@ const itemStyle = {
         fontSize: 14,
         width: itemChildWidth.title,
         marginLeft: margin,
-        textAlign: 'center'
+        textAlign: 'left'
     },
 
     colorStyle: {
@@ -124,11 +124,6 @@ const itemStyle = {
         color: 'rgb(93,175,174)',
         marginLeft: margin,
         width: itemChildWidth.color,
-        textAlign: 'center'
-    },
-
-    pStyle: {
-        display: 'inline-block',
         textAlign: 'left'
     },
 
