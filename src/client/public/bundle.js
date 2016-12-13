@@ -75877,7 +75877,7 @@
 	        width: itemChildWidth.num,
 	        marginLeft: margin,
 	        textAlign: 'middle',
-	        fontSize: 15
+	        fontSize: 16
 	    },
 	
 	    statusStyle: {
@@ -75891,8 +75891,8 @@
 	        textAlign: 'middle',
 	        color: 'rgb(93,175,174)',
 	        marginLeft: margin,
-	        fontSize: 15,
-	        fontWeight: 'bold'
+	        fontSize: 16,
+	        fontWeight: 700
 	    },
 	
 	    lastStyle: {
