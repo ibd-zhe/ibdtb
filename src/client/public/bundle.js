@@ -23462,7 +23462,7 @@
 	// tabBar
 	var titleBarStyle = {
 	    height: 80,
-	    backgroundColor: stringBgColor,
+	    background: 'linear-gradient(135deg, rgba(54,54,54,0.64), rgba(150,0,0,0.64))',
 	    width: '100%',
 	    position: 'relative',
 	    fontFamily: 'Lato, YueHei '
