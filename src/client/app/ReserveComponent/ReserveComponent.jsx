@@ -138,7 +138,7 @@ class ItemComponent extends React.Component {
             return (
                 <div style={{width: '100%', backgroundColor: itemBgColor}}>
                     {this.content()}
-                    <svg style={{display: 'block',height: 3, width: '100%',stroke: 'rgba(0,34,78,0.7)',strokeDasharray: '8 8', strokeidth: 3}}>
+                    <svg style={{display: 'block',height: 3, width: '100%',stroke: 'rgba(199,131,131,0.7)',strokeDasharray: '8 8', strokeidth: 3}}>
                         <line x1="0%" y1="0%" x2="100%" y2="0%"/>
                     </svg>
                 </div>

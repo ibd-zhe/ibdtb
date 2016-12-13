@@ -23762,7 +23762,7 @@
 	                    this.content(),
 	                    _react2.default.createElement(
 	                        'svg',
-	                        { style: { display: 'block', height: 3, width: '100%', stroke: 'rgba(0,34,78,0.7)', strokeDasharray: '8 8', strokeidth: 3 } },
+	                        { style: { display: 'block', height: 3, width: '100%', stroke: 'rgba(199,131,131,0.7)', strokeDasharray: '8 8', strokeidth: 3 } },
 	                        _react2.default.createElement('line', { x1: '0%', y1: '0%', x2: '100%', y2: '0%' })
 	                    )
 	                );
