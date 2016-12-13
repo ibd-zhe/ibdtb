@@ -138,7 +138,8 @@ const itemStyle = {
     numStyle: {
         width: itemChildWidth.num,
         marginLeft: margin,
-        textAlign: 'middle'
+        textAlign: 'middle',
+        fontSize: 15
     },
 
     statusStyle: {
@@ -151,7 +152,9 @@ const itemStyle = {
         width: itemChildWidth.reserve,
         textAlign: 'middle',
         color: 'rgb(93,175,174)',
-        marginLeft: margin
+        marginLeft: margin,
+        fontSize: 15,
+        fontWeight: 'bold'
     },
 
     lastStyle: {
