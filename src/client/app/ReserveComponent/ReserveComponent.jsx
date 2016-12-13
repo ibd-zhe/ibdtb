@@ -64,7 +64,7 @@ class OrderComponent extends React.Component {
 
     items() {
         return this.props.items.map((item, index) =>
-                    <ItemComponent key={item.id} imgUrl={item.imgUrl} title={item.title} color={item.color} q={item.num} status={item.status} avail_q={item.avail_q} last={index===this.props.items.length}/>
+                    <ItemComponent key={item.id} imgUrl={item.imgUrl} title={item.title} color={item.color} q={item.num} status={item.status} avail_q={item.avail_q} last={index===this.props.items.length - 1}/>
                 );
     }
 
@@ -144,7 +144,7 @@ class ItemComponent extends React.Component {
                 </div>
             );
         } else {
-            return this.content()
+            return this.content();
         }
 
     }

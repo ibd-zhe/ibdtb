@@ -23633,7 +23633,7 @@
 	            var _this4 = this;
 	
 	            return this.props.items.map(function (item, index) {
-	                return _react2.default.createElement(ItemComponent, { key: item.id, imgUrl: item.imgUrl, title: item.title, color: item.color, q: item.num, status: item.status, avail_q: item.avail_q, last: index === _this4.props.items.length });
+	                return _react2.default.createElement(ItemComponent, { key: item.id, imgUrl: item.imgUrl, title: item.title, color: item.color, q: item.num, status: item.status, avail_q: item.avail_q, last: index === _this4.props.items.length - 1 });
 	            });
 	        }
 	    }, {
