@@ -95,8 +95,8 @@ const orderStyle = {
 
 
 // item
+const itemBgColor = stringBgColor;
 const itemStyle = {
-    backgroundColor: stringBgColor,
     width: '100%',
     display: 'flex',
 
@@ -150,4 +150,4 @@ const itemStyle = {
     }
 };
 
-export {searchStyle, userStyle, orderStyle, itemStyle, reserveCmpStyle, userCmpStyle, orderCmpStyle};
+export {searchStyle, userStyle, orderStyle, itemStyle, reserveCmpStyle, userCmpStyle, orderCmpStyle, itemBgColor};

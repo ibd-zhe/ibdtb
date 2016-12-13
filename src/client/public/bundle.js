@@ -23758,16 +23758,20 @@
 	            if (this.props.last === false) {
 	                return _react2.default.createElement(
 	                    'div',
-	                    { style: { width: '100%' } },
+	                    { style: { width: '100%', backgroundColor: _ReserveCmpStyle.itemBgColor } },
 	                    this.content(),
 	                    _react2.default.createElement(
 	                        'svg',
-	                        { style: { display: 'block', height: 3, width: '100%', stroke: 'rgba(0,34,78,0.4)', strokeDasharray: '8 8', strokeidth: 3 } },
+	                        { style: { display: 'block', height: 3, width: '100%', stroke: 'rgba(0,34,78,0.7)', strokeDasharray: '8 8', strokeidth: 3 } },
 	                        _react2.default.createElement('line', { x1: '0%', y1: '0%', x2: '100%', y2: '0%' })
 	                    )
 	                );
 	            } else {
-	                return this.content();
+	                return _react2.default.createElement(
+	                    'div',
+	                    { style: { width: '100%', backgroundColor: _ReserveCmpStyle.itemBgColor } },
+	                    this.content()
+	                );
 	            }
 	        }
 	    }]);
@@ -75731,7 +75735,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.orderCmpStyle = exports.userCmpStyle = exports.reserveCmpStyle = exports.itemStyle = exports.orderStyle = exports.userStyle = exports.searchStyle = undefined;
+	exports.itemBgColor = exports.orderCmpStyle = exports.userCmpStyle = exports.reserveCmpStyle = exports.itemStyle = exports.orderStyle = exports.userStyle = exports.searchStyle = undefined;
 	
 	var _AppStyle = __webpack_require__(/*! ./AppStyle.js */ 185);
 	
@@ -75827,8 +75831,8 @@
 	};
 	
 	// item
+	var itemBgColor = _AppStyle.stringBgColor;
 	var itemStyle = {
-	    backgroundColor: _AppStyle.stringBgColor,
 	    width: '100%',
 	    display: 'flex',
 	
@@ -75889,6 +75893,7 @@
 	exports.reserveCmpStyle = reserveCmpStyle;
 	exports.userCmpStyle = userCmpStyle;
 	exports.orderCmpStyle = orderCmpStyle;
+	exports.itemBgColor = itemBgColor;
 
 /***/ }
 /******/ ]);
