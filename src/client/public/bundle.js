@@ -23460,7 +23460,7 @@
 	
 	// tabBar
 	var titleBarStyle = {
-	    height: 60,
+	    height: 80,
 	    backgroundColor: stringBgColor,
 	    width: '100%',
 	    position: 'relative',
@@ -23569,7 +23569,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { style: _ReserveCmpStyle.bridgeStyle },
+	                { style: _ReserveCmpStyle.reserveCmpStyle },
 	                _react2.default.createElement(_SearchComponent2.default, { search: this.search, style: _ReserveCmpStyle.searchStyle, placeholder: '\u8BF7\u8F93\u5165\u4E0A\u5E1Did' }),
 	                _react2.default.createElement(UserComponent, { content: this.state.content })
 	            );
@@ -23603,9 +23603,9 @@
 	            } else {
 	                return _react2.default.createElement(
 	                    'div',
-	                    { style: _ReserveCmpStyle.bridgeStyle },
+	                    { style: _ReserveCmpStyle.userCmpStyle },
 	                    _react2.default.createElement(
-	                        'div',
+	                        'p',
 	                        { style: _ReserveCmpStyle.userStyle },
 	                        this.props.content.user_id
 	                    ),
@@ -23639,7 +23639,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { style: _ReserveCmpStyle.bridgeStyle },
+	                { style: _ReserveCmpStyle.orderCmpStyle },
 	                _react2.default.createElement(OrderInfoComponent, { number: this.props.number, pay_time: this.props.pay_time }),
 	                this.items()
 	            );
@@ -23712,53 +23712,49 @@
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'table',
+	                'div',
 	                { style: _ReserveCmpStyle.itemStyle },
 	                _react2.default.createElement(
-	                    'tbody',
-	                    null,
+	                    'div',
+	                    { style: _ReserveCmpStyle.itemStyle.imgStyle },
 	                    _react2.default.createElement(
-	                        'tr',
-	                        { style: _ReserveCmpStyle.itemStyle.rowStyle },
-	                        _react2.default.createElement(
-	                            'td',
-	                            { style: _ReserveCmpStyle.itemStyle.imgStyle },
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: this.itemTBUrl(), style: { height: "inherit" } },
-	                                _react2.default.createElement('img', { src: this.props.imgUrl, style: { height: 'inherit', width: 'auto' } })
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            { style: _ReserveCmpStyle.itemStyle.nameStyle },
-	                            _react2.default.createElement(
-	                                'p',
-	                                { style: _ReserveCmpStyle.itemStyle.nameStyle.titleStyle },
-	                                this.props.title
-	                            ),
-	                            _react2.default.createElement(
-	                                'p',
-	                                { style: _ReserveCmpStyle.itemStyle.nameStyle.colorStyle },
-	                                this.props.color
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            { style: _ReserveCmpStyle.itemStyle.numStyle },
-	                            this.props.q
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            { style: _ReserveCmpStyle.itemStyle.statusStyle },
-	                            this.props.status
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            { style: _ReserveCmpStyle.itemStyle.numStyle },
-	                            this.props.avail_q
-	                        )
+	                        'a',
+	                        { href: this.itemTBUrl(), style: { height: "inherit" } },
+	                        _react2.default.createElement('img', { src: this.props.imgUrl, style: { height: 'inherit', width: 'auto' } })
 	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { style: _ReserveCmpStyle.itemStyle.titleStyle },
+	                    _react2.default.createElement(
+	                        'p',
+	                        { style: _ReserveCmpStyle.itemStyle.pStyle },
+	                        this.props.title
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { style: _ReserveCmpStyle.itemStyle.colorStyle },
+	                    _react2.default.createElement(
+	                        'p',
+	                        { style: _ReserveCmpStyle.itemStyle.pStyle },
+	                        this.props.color
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { style: _ReserveCmpStyle.itemStyle.numStyle },
+	                    this.props.q
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { style: _ReserveCmpStyle.itemStyle.statusStyle },
+	                    this.props.status
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { style: _ReserveCmpStyle.itemStyle.numStyle },
+	                    this.props.avail_q
 	                )
 	            );
 	        }
@@ -75723,7 +75719,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.bridgeStyle = exports.itemStyle = exports.orderStyle = exports.userStyle = exports.searchStyle = undefined;
+	exports.orderCmpStyle = exports.userCmpStyle = exports.reserveCmpStyle = exports.itemStyle = exports.orderStyle = exports.userStyle = exports.searchStyle = undefined;
 	
 	var _AppStyle = __webpack_require__(/*! ./AppStyle.js */ 185);
 	
@@ -75760,14 +75756,33 @@
 	    }
 	};
 	
-	var bridgeStyle = {
+	var reserveCmpStyle = {
+	    width: 1020
+	};
+	
+	var itemChildWidth = {
+	    img: 100,
+	    title: 210,
+	    color: 125,
+	    num: 10,
+	    status: 90,
+	    reserve: 10
+	};
+	
+	var margin = (reserveCmpStyle.width - itemChildWidth.img - itemChildWidth.title - itemChildWidth.color - itemChildWidth.num - itemChildWidth.status - itemChildWidth.reserve) / 6;
+	
+	var userCmpStyle = {
 	    width: '100%'
 	};
 	
 	var userStyle = {
-	    marginLeft: _AppStyle.titleStyle.left,
+	    marginLeft: margin / 2,
 	    marginTop: 5,
 	    marginBottom: 50
+	};
+	
+	var orderCmpStyle = {
+	    width: '100%'
 	};
 	
 	// order bar
@@ -75780,7 +75795,7 @@
 	    tableLayout: 'fixed',
 	
 	    numberStyle: {
-	        paddingLeft: userStyle.marginLeft,
+	        paddingLeft: margin / 2,
 	        width: 225
 	    },
 	
@@ -75798,49 +75813,69 @@
 	// item
 	var itemStyle = {
 	    backgroundColor: _AppStyle.stringBgColor,
-	    tableLayout: 'fixed',
 	    width: '100%',
-	    overflowWrap: 'break-word',
-	    borderCollapse: 'collapse',
-	    textAlign: 'left',
-	    borderStyle: 'hidden',
+	    display: 'flex',
 	
-	    rowStyle: {
-	        borderBottom: '2px solid rgba(187,129,151,0.5)'
-	    },
+	    // vertical center content
+	    alignItems: 'center',
 	
 	    imgStyle: {
 	        // width is for div
-	        width: 150,
+	        width: itemChildWidth.img,
 	
-	        // height is for img
-	        height: 80,
-	        paddingTop: 15,
-	        paddingBottom: 15,
-	        paddingLeft: orderStyle.numberStyle.paddingLeft
+	        // height is for img and this determines rows height
+	        height: 85,
+	        marginLeft: margin / 2
 	    },
 	
-	    nameStyle: {
-	        titleStyle: {
-	            fontSize: 15,
-	            marginLeft: 13
-	        },
-	        colorStyle: {
-	            fontSize: 12,
-	            color: 'rgb(93,175,174)',
-	            marginLeft: 19
-	        }
+	    titleStyle: {
+	        display: 'inline-block',
+	        fontSize: 15,
+	        width: itemChildWidth.title,
+	        marginLeft: margin,
+	        textAlign: 'center'
 	    },
-	    numStyle: {},
-	    statusStyle: {},
-	    reserveStyle: orderStyle.reserveQStyle
+	
+	    colorStyle: {
+	        fontSize: 12,
+	        color: 'rgb(93,175,174)',
+	        marginLeft: margin,
+	        width: itemChildWidth.color,
+	        textAlign: 'center'
+	    },
+	
+	    pStyle: {
+	        display: 'inline-block',
+	        textAlign: 'left'
+	    },
+	
+	    numStyle: {
+	        width: itemChildWidth.num,
+	        marginLeft: margin,
+	        textAlign: 'middle'
+	    },
+	
+	    statusStyle: {
+	        width: itemChildWidth.status,
+	        textAlign: 'middle',
+	        marginLeft: margin
+	    },
+	
+	    reserveStyle: {
+	        width: itemChildWidth.reserve,
+	        textAlign: 'middle',
+	        color: 'rgb(147,36,99)',
+	        marginLeft: margin
+	    }
 	};
 	
 	exports.searchStyle = searchStyle;
 	exports.userStyle = userStyle;
 	exports.orderStyle = orderStyle;
 	exports.itemStyle = itemStyle;
-	exports.bridgeStyle = bridgeStyle;
+	exports.reserveCmpStyle = reserveCmpStyle;
+	exports.userCmpStyle = userCmpStyle;
+	exports.orderCmpStyle = orderCmpStyle;
 
 /***/ }
 /******/ ]);

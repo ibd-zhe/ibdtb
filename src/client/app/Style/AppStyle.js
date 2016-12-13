@@ -29,7 +29,7 @@ const appStyle = {
 
 // tabBar
 const titleBarStyle = {
-    height: 60,
+    height: 80,
     backgroundColor: stringBgColor,
     width: '100%',
     position: 'relative',

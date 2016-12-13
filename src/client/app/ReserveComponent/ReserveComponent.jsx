@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchComponent from '../UIComponent/SearchComponent.jsx'
 import orderByUser from '../Model/IbdDb.js'
-import {searchStyle, userStyle, orderStyle, itemStyle, bridgeStyle} from '../Style/ReserveCmpStyle.js'
+import {searchStyle, userStyle, orderStyle, itemStyle, reserveCmpStyle, userCmpStyle, orderCmpStyle} from '../Style/ReserveCmpStyle.js'
 
 class ReserveComponent extends React.Component{
     constructor(props) {
@@ -29,7 +29,7 @@ class ReserveComponent extends React.Component{
 
     render() {
         return (
-            <div style={bridgeStyle}>
+            <div style={reserveCmpStyle}>
                 <SearchComponent search={this.search} style={searchStyle} placeholder="请输入上帝id"/>
                 <UserComponent content={this.state.content}/>
             </div>
@@ -51,8 +51,8 @@ class UserComponent extends React.Component {
         }
         else {
             return (
-                <div style={bridgeStyle}>
-                    <div style={userStyle}>{this.props.content.user_id}</div>
+                <div style={userCmpStyle}>
+                    <p style={userStyle}>{this.props.content.user_id}</p>
                     {this.orders()}
                 </div>
             );
@@ -70,7 +70,7 @@ class OrderComponent extends React.Component {
 
     render() {
         return (
-            <div style={bridgeStyle}>
+            <div style={orderCmpStyle}>
                 <OrderInfoComponent number={this.props.number} pay_time={this.props.pay_time}/>
                 {this.items()}
             </div>
@@ -102,38 +102,42 @@ class ItemComponent extends React.Component {
 
     render() {
         return (
-            <table style={itemStyle}>
-                <tbody>
-                <tr style={itemStyle.rowStyle}>
-                    <td style={itemStyle.imgStyle}>
+                <div style={itemStyle}>
+                    <div style={itemStyle.imgStyle}>
                         <a href={this.itemTBUrl()} style={{height: "inherit"}}>
                             <img src={this.props.imgUrl} style={{height: 'inherit', width: 'auto'}}>
                             </img>
                         </a>
-                    </td>
-                    <td style={itemStyle.nameStyle}>
-                        <p style={itemStyle.nameStyle.titleStyle}>
+                    </div>
+
+                    <div style={itemStyle.titleStyle}>
+                        <p style={itemStyle.pStyle}>
                             {this.props.title}
                         </p>
-                        <p style={itemStyle.nameStyle.colorStyle}>
+                    </div>
+
+                    <div style={itemStyle.colorStyle}>
+                        <p style={itemStyle.pStyle}>
                             {this.props.color}
                         </p>
-                    </td>
-                    <td style={itemStyle.numStyle}>
+                    </div>
+
+                    <p style={itemStyle.numStyle}>
                         {this.props.q}
-                    </td>
-                    <td style={itemStyle.statusStyle}>
+                    </p>
+
+                    <p style={itemStyle.statusStyle}>
                         {this.props.status}
-                    </td>
-                    <td style={itemStyle.numStyle}>
+                    </p>
+
+                    <p style={itemStyle.numStyle}>
                         {this.props.avail_q}
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                    </p>
+                </div>
         );
     }
 }
+
 
 export default ReserveComponent;
 
