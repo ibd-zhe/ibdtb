@@ -127,7 +127,7 @@ class ItemComponent extends React.Component {
                     {this.props.status}
                 </p>
 
-                <p style={itemStyle.numStyle}>
+                <p style={itemStyle.reserveStyle}>
                     {this.props.avail_q}
                 </p>
             </div>

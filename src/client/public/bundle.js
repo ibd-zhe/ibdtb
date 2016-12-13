@@ -23749,7 +23749,7 @@
 	                ),
 	                _react2.default.createElement(
 	                    'p',
-	                    { style: _ReserveCmpStyle.itemStyle.numStyle },
+	                    { style: _ReserveCmpStyle.itemStyle.reserveStyle },
 	                    this.props.avail_q
 	                )
 	            );
@@ -75815,7 +75815,7 @@
 	// order bar
 	var orderStyle = {
 	    width: '100%',
-	    height: 60,
+	    height: 45,
 	    backgroundColor: 'rgba(110,110,110,0.67)',
 	    textAlign: 'left',
 	    borderCollapse: 'collapse',

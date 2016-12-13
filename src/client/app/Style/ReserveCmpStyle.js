@@ -75,7 +75,7 @@ const orderRadius = 6;
 // order bar
 const orderStyle = {
     width: '100%',
-    height: 60,
+    height: 45,
     backgroundColor: 'rgba(110,110,110,0.67)',
     textAlign: 'left',
     borderCollapse: 'collapse',
