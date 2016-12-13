@@ -64,7 +64,8 @@ class OrderComponent extends React.Component {
 
     items() {
         return this.props.items.map((item, index) =>
-                    <ItemComponent key={item.id} imgUrl={item.imgUrl} title={item.title} color={item.color} q={item.num} status={item.status} avail_q={item.avail_q} last={index===this.props.items.length - 1}/>
+                    <ItemComponent key={item.id} imgUrl={item.imgUrl} title={item.title} color={item.color} q={item.num} status={item.status}
+                                   itemid={item.itemid} avail_q={item.avail_q} last={index===this.props.items.length - 1}/>
                 );
     }
 
@@ -97,14 +98,14 @@ class OrderInfoComponent extends React.Component {
 class ItemComponent extends React.Component {
 
     itemTBUrl() {
-        return "https://item.taobao.com/item.htm?id=" + this.props.itemid;
+        return "https://item.taobao.com/item.htm?id=" + this.props.itemid.toString();
     }
 
     content() {
         return (
             <div style={itemStyle}>
                 <div style={itemStyle.imgStyle}>
-                    <a href={this.itemTBUrl()} style={{height: "inherit"}}>
+                    <a href={this.itemTBUrl()} target="_blank" style={{height: "inherit"}}>
                         <img src={this.props.imgUrl} style={{height: 'inherit', width: 'auto'}}>
                         </img>
                     </a>

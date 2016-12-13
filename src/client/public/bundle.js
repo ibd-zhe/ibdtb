@@ -23634,7 +23634,8 @@
 	            var _this4 = this;
 	
 	            return this.props.items.map(function (item, index) {
-	                return _react2.default.createElement(ItemComponent, { key: item.id, imgUrl: item.imgUrl, title: item.title, color: item.color, q: item.num, status: item.status, avail_q: item.avail_q, last: index === _this4.props.items.length - 1 });
+	                return _react2.default.createElement(ItemComponent, { key: item.id, imgUrl: item.imgUrl, title: item.title, color: item.color, q: item.num, status: item.status,
+	                    itemid: item.itemid, avail_q: item.avail_q, last: index === _this4.props.items.length - 1 });
 	            });
 	        }
 	    }, {
@@ -23709,7 +23710,7 @@
 	    _createClass(ItemComponent, [{
 	        key: 'itemTBUrl',
 	        value: function itemTBUrl() {
-	            return "https://item.taobao.com/item.htm?id=" + this.props.itemid;
+	            return "https://item.taobao.com/item.htm?id=" + this.props.itemid.toString();
 	        }
 	    }, {
 	        key: 'content',
@@ -23722,7 +23723,7 @@
 	                    { style: _ReserveCmpStyle.itemStyle.imgStyle },
 	                    _react2.default.createElement(
 	                        'a',
-	                        { href: this.itemTBUrl(), style: { height: "inherit" } },
+	                        { href: this.itemTBUrl(), target: '_blank', style: { height: "inherit" } },
 	                        _react2.default.createElement('img', { src: this.props.imgUrl, style: { height: 'inherit', width: 'auto' } })
 	                    )
 	                ),
