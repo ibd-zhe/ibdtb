@@ -1,4 +1,4 @@
-import {stringBgColor, svgUrl} from './AppStyle.js'
+import {stringBgColor, svgUrl, appStyle} from './AppStyle.js'
 
 const searchHeight = 40;
 
@@ -13,6 +13,7 @@ const searchStyle = {
     },
 
     inputStyle: {
+        fontFamily: appStyle.fontFamily,
         borderRadius: 40,
         width: '80%',
         height: '100%',
@@ -60,7 +61,8 @@ const userCmpStyle = {
 const userStyle = {
     marginLeft: margin/2,
     marginTop: 5,
-    marginBottom: 50
+    marginBottom: 20,
+    fontSize: 18
 };
 
 const orderCmpStyle = {
@@ -120,7 +122,6 @@ const itemStyle = {
     },
 
     titleStyle: {
-        fontSize: 14,
         width: itemChildWidth.title,
         marginLeft: margin,
         textAlign: 'left'
@@ -141,7 +142,6 @@ const itemStyle = {
     },
 
     statusStyle: {
-        fontSize: 13,
         width: itemChildWidth.status,
         textAlign: 'middle',
         marginLeft: margin
@@ -150,7 +150,7 @@ const itemStyle = {
     reserveStyle: {
         width: itemChildWidth.reserve,
         textAlign: 'middle',
-        color: 'rgb(147,36,99)',
+        color: 'rgb(93,175,174)',
         marginLeft: margin
     },
 

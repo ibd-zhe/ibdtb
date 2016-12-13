@@ -23452,6 +23452,7 @@
 	
 	    // font
 	    fontFamily: 'Lato, STXihei, Microsoft Yahei',
+	    fontSize: 14,
 	
 	    // text color
 	    color: 'rgb(90%, 90%, 90%)',
@@ -75752,6 +75753,7 @@
 	    },
 	
 	    inputStyle: {
+	        fontFamily: _AppStyle.appStyle.fontFamily,
 	        borderRadius: 40,
 	        width: '80%',
 	        height: '100%',
@@ -75798,7 +75800,8 @@
 	var userStyle = {
 	    marginLeft: margin / 2,
 	    marginTop: 5,
-	    marginBottom: 50
+	    marginBottom: 20,
+	    fontSize: 18
 	};
 	
 	var orderCmpStyle = {
@@ -75856,7 +75859,6 @@
 	    },
 	
 	    titleStyle: {
-	        fontSize: 14,
 	        width: itemChildWidth.title,
 	        marginLeft: margin,
 	        textAlign: 'left'
@@ -75877,7 +75879,6 @@
 	    },
 	
 	    statusStyle: {
-	        fontSize: 13,
 	        width: itemChildWidth.status,
 	        textAlign: 'middle',
 	        marginLeft: margin
@@ -75886,7 +75887,7 @@
 	    reserveStyle: {
 	        width: itemChildWidth.reserve,
 	        textAlign: 'middle',
-	        color: 'rgb(147,36,99)',
+	        color: 'rgb(93,175,174)',
 	        marginLeft: margin
 	    },
 	

@@ -21,6 +21,7 @@ const appStyle = {
 
     // font
     fontFamily: 'Lato, STXihei, Microsoft Yahei',
+    fontSize: 14,
 
     // text color
     color: 'rgb(90%, 90%, 90%)',
