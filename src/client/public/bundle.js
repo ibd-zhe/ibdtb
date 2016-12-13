@@ -23478,7 +23478,7 @@
 	
 	var tabBarStyle = {
 	    position: 'absolute',
-	    left: '60%',
+	    left: '70%',
 	    height: '100%',
 	    borderSpacing: '40px 0',
 	    borderCollapse: 'seperate',
