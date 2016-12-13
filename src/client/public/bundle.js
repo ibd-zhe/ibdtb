@@ -23769,7 +23769,7 @@
 	            } else {
 	                return _react2.default.createElement(
 	                    'div',
-	                    { style: { width: '100%', backgroundColor: _ReserveCmpStyle.itemBgColor } },
+	                    { style: _ReserveCmpStyle.itemStyle.lastStyle },
 	                    this.content()
 	                );
 	            }
@@ -75802,8 +75802,11 @@
 	};
 	
 	var orderCmpStyle = {
-	    width: '100%'
+	    width: '100%',
+	    bottomMargin: 20
 	};
+	
+	var orderRadius = 6;
 	
 	// order bar
 	var orderStyle = {
@@ -75813,6 +75816,8 @@
 	    textAlign: 'left',
 	    borderCollapse: 'collapse',
 	    tableLayout: 'fixed',
+	    borderTopRightRadius: orderRadius,
+	    borderTopLeftRadius: orderRadius,
 	
 	    numberStyle: {
 	        paddingLeft: margin / 2,
@@ -75883,6 +75888,13 @@
 	        textAlign: 'middle',
 	        color: 'rgb(147,36,99)',
 	        marginLeft: margin
+	    },
+	
+	    lastStyle: {
+	        width: '100%',
+	        backgroundColor: itemBgColor,
+	        borderBottomRightRadius: orderRadius,
+	        borderBottomLeftRadius: orderRadius
 	    }
 	};
 	

@@ -145,7 +145,7 @@ class ItemComponent extends React.Component {
             );
         } else {
             return (
-                <div style={{width: '100%', backgroundColor: itemBgColor}}>
+                <div style={itemStyle.lastStyle}>
                     {this.content()}
                 </div>
             );

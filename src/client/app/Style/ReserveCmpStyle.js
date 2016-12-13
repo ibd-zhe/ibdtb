@@ -64,8 +64,11 @@ const userStyle = {
 };
 
 const orderCmpStyle = {
-    width: '100%'
+    width: '100%',
+    bottomMargin: 20
 };
+
+const orderRadius = 6;
 
 // order bar
 const orderStyle = {
@@ -75,6 +78,8 @@ const orderStyle = {
     textAlign: 'left',
     borderCollapse: 'collapse',
     tableLayout: 'fixed',
+    borderTopRightRadius: orderRadius,
+    borderTopLeftRadius: orderRadius,
 
     numberStyle: {
         paddingLeft: margin/2,
@@ -147,6 +152,13 @@ const itemStyle = {
         textAlign: 'middle',
         color: 'rgb(147,36,99)',
         marginLeft: margin
+    },
+
+    lastStyle: {
+        width: '100%',
+        backgroundColor: itemBgColor,
+        borderBottomRightRadius: orderRadius,
+        borderBottomLeftRadius: orderRadius
     }
 };
 
