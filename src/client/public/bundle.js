@@ -75832,7 +75832,6 @@
 	    },
 	
 	    titleStyle: {
-	        display: 'inline-block',
 	        fontSize: 15,
 	        width: itemChildWidth.title,
 	        marginLeft: margin,
