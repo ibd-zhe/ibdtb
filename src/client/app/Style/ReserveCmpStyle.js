@@ -1,4 +1,4 @@
-import {stringBgColor, titleStyle, svgUrl} from './AppStyle.js'
+import {stringBgColor, svgUrl} from './AppStyle.js'
 
 const searchHeight = 40;
 
@@ -108,18 +108,19 @@ const itemStyle = {
         // height is for img and this determines rows height
         height: 85,
         marginLeft: margin/2,
-        padding: 10
+        paddingTop: 10,
+        paddingBottom: 10,
     },
 
     titleStyle: {
-        fontSize: 15,
+        fontSize: 14,
         width: itemChildWidth.title,
         marginLeft: margin,
         textAlign: 'center'
     },
 
     colorStyle: {
-        fontSize: 12,
+        fontSize: 13,
         color: 'rgb(93,175,174)',
         marginLeft: margin,
         width: itemChildWidth.color,

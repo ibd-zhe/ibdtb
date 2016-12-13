@@ -33,7 +33,7 @@ const titleBarStyle = {
     backgroundColor: stringBgColor,
     width: '100%',
     position: 'relative',
-    fontFamily: 'Lato, YueHei'
+    fontFamily: 'Lato, STXihei, Microsoft YaHei'
 };
 
 const titleStyle = {
