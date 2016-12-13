@@ -23459,10 +23459,13 @@
 	    overflow: 'scroll'
 	};
 	
+	var graLevel = 0.2;
+	var lightLevel = 110;
+	
 	// tabBar
 	var titleBarStyle = {
 	    height: 80,
-	    background: 'linear-gradient(135deg, rgba(54,54,54,0.64), rgba(150,0,0,0.64))',
+	    background: "linear-gradient(180deg, rgba(" + lightLevel + "," + lightLevel + "," + lightLevel + ",0.64) ,rgba(40, 40, 40, 0.8))",
 	    width: '100%',
 	    position: 'relative',
 	    fontFamily: 'Lato, YueHei '
