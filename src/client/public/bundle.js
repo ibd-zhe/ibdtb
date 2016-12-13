@@ -75803,7 +75803,7 @@
 	
 	var orderCmpStyle = {
 	    width: '100%',
-	    bottomMargin: 20
+	    marginBottom: 20
 	};
 	
 	var orderRadius = 6;

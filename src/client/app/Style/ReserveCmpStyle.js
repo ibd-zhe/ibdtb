@@ -65,7 +65,7 @@ const userStyle = {
 
 const orderCmpStyle = {
     width: '100%',
-    bottomMargin: 20
+    marginBottom: 20
 };
 
 const orderRadius = 6;
