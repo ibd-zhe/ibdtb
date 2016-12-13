@@ -134,11 +134,11 @@ class ItemComponent extends React.Component {
     }
 
     render() {
-        if (this.props.last === true) {
+        if (this.props.last === false) {
             return (
                 <div style={{width: '100%'}}>
                     {this.content()}
-                    <svg style={{width: '100%',stroke: 'rgba(0,34,78,0.4)',strokeasharray: '8 8', strokeidth: 3}}>
+                    <svg style={{display: 'block',height: 3, width: '100%',stroke: 'rgba(0,34,78,0.4)',strokeDasharray: '8 8', strokeidth: 3}}>
                         <line x1="0%" y1="0%" x2="100%" y2="0%"/>
                     </svg>
                 </div>

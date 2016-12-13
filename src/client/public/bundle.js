@@ -23755,14 +23755,14 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            if (this.props.last === true) {
+	            if (this.props.last === false) {
 	                return _react2.default.createElement(
 	                    'div',
 	                    { style: { width: '100%' } },
 	                    this.content(),
 	                    _react2.default.createElement(
 	                        'svg',
-	                        { style: { width: '100%', stroke: 'rgba(0,34,78,0.4)', strokeasharray: '8 8', strokeidth: 3 } },
+	                        { style: { display: 'block', height: 3, width: '100%', stroke: 'rgba(0,34,78,0.4)', strokeDasharray: '8 8', strokeidth: 3 } },
 	                        _react2.default.createElement('line', { x1: '0%', y1: '0%', x2: '100%', y2: '0%' })
 	                    )
 	                );
