@@ -20,7 +20,7 @@ const appStyle = {
     height: '100%',
 
     // font
-    fontFamily: 'Lato, SimHei',
+    fontFamily: 'Lato, STXihei, Microsoft Yahei',
 
     // text color
     color: 'rgb(90%, 90%, 90%)',
@@ -33,7 +33,7 @@ const titleBarStyle = {
     backgroundColor: stringBgColor,
     width: '100%',
     position: 'relative',
-    fontFamily: 'Lato, STXihei, Microsoft YaHei'
+    fontFamily: 'Lato, Yue'
 };
 
 const titleStyle = {
