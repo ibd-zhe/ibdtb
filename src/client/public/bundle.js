@@ -75757,7 +75757,9 @@
 	};
 	
 	var reserveCmpStyle = {
-	    width: 1020
+	    width: 1100,
+	    marginLeft: 'auto',
+	    marginRight: 'auto'
 	};
 	
 	var itemChildWidth = {
@@ -75806,7 +75808,7 @@
 	
 	    reserveQStyle: {
 	        textAlign: 'right',
-	        paddingRight: 100
+	        paddingRight: margin / 2
 	    }
 	};
 	
@@ -75825,7 +75827,8 @@
 	
 	        // height is for img and this determines rows height
 	        height: 85,
-	        marginLeft: margin / 2
+	        marginLeft: margin / 2,
+	        padding: 10
 	    },
 	
 	    titleStyle: {

@@ -34,7 +34,9 @@ const searchStyle = {
 };
 
 const reserveCmpStyle = {
-    width: 1020,
+    width: 1100,
+    marginLeft: 'auto',
+    marginRight: 'auto'
 };
 
 const itemChildWidth = {
@@ -58,7 +60,6 @@ const userStyle = {
     marginTop: 5,
     marginBottom: 50
 };
-
 
 const orderCmpStyle = {
     width: '100%'
@@ -85,7 +86,7 @@ const orderStyle = {
 
     reserveQStyle: {
         textAlign: 'right',
-        paddingRight: 100
+        paddingRight: margin/2
     }
 };
 
@@ -106,7 +107,8 @@ const itemStyle = {
 
         // height is for img and this determines rows height
         height: 85,
-        marginLeft: margin/2
+        marginLeft: margin/2,
+        padding: 10
     },
 
     titleStyle: {
