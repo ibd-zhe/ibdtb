@@ -16,3 +16,15 @@ html, body, #app {
 body {
     margin: 0;
 }
+
+button {
+    background-color: rgba(150, 150, 150, 0.7);
+}
+
+button:hover {
+    background-color: rgb(180, 180, 180);
+}
+
+
+
+input, select, textarea {font-family: inherit; color: inherit}

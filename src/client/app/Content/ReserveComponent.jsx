@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchComponent from '../UIComponent/SearchComponent.jsx'
-import orderByUser from '../Model/IbdDb.js'
+import {SearchComponent} from '../UIComponent/SearchComponent.jsx'
+import {orderByUser} from '../Model/IbdDb.js'
 import {searchStyle, userStyle, orderStyle, itemStyle, reserveCmpStyle, userCmpStyle, orderCmpStyle, itemBgColor} from '../Style/ReserveCmpStyle.js'
 
 class ReserveComponent extends React.Component{

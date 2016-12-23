@@ -14,7 +14,7 @@ const searchStyle = {
 
     inputStyle: {
         fontFamily: appStyle.fontFamily,
-        borderRadius: 40,
+        borderRadius: searchHeight,
         width: '80%',
         height: '100%',
         backgroundColor: 'rgba(0,0,0,0)',

@@ -3,7 +3,9 @@
  */
 var request = require('request');
 
-const orderUrl = "http://54.223.65.44:8100/orders/";
+const host = "http://54.223.65.44:8100/";
+const orderUrl = host + "orders/";
+const productUrl = host + "product/";
 
 function orderByUser(user_id, callback) {
     request(orderUrl + user_id, function (error, response, body) {
@@ -15,5 +17,14 @@ function orderByUser(user_id, callback) {
     });
 }
 
-
-export default orderByUser;
+function searchProduct(kwd, callback) {
+    console.log(kwd);
+    request(productUrl + kwd, function (error, response, body) {
+        if (!error) {
+            callback(body);
+        } else {
+            callback(null);
+        }
+    });
+}
+export {orderByUser, searchProduct};
