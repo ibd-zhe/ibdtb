@@ -2,7 +2,7 @@ import React from 'react';
 import {titleBarStyle, tabBarStyle, titleStyle, tabStyle} from './Style/AppStyle.js'
 
 const title = "爱买丢";
-const tabnames = ["预留查询", "上现货", "下单"];
+const tabnames = ["预留查询", "文档", "下单"];
 
 class TitleBar extends React.Component {
 

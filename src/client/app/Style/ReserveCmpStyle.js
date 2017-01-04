@@ -114,7 +114,7 @@ const itemStyle = {
         // width is for div
         width: itemChildWidth.img,
 
-        // height is for img and this determines rows height
+        // height is for img and this determines rows width
         height: 85,
         marginLeft: margin/2,
         paddingTop: 10,

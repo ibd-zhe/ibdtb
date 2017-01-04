@@ -1,23 +1,23 @@
 import React from 'react';
 import {TypeInputComponent} from '../UIComponent/SearchComponent.jsx'
 import {searchProduct} from '../Model/IbdDb.js'
-import {productSearchStyle, searchBoxStyle, brandBoxStyle, productBoxStyle, itemBoxStyle} from '../Style/StyleProductSearch.js'
+import {productSearchStyle, brandBoxStyle, productBoxStyle, itemBoxStyle} from '../Style/StyleProductSearch.js'
 
 
 class ProductInputComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.ACSearch = this.ACSearch.bind(this);
-        this.updateContent = this.updateContent.bind(this);
         this.updateInput = this.updateInput.bind(this);
-        this.state = {content: null, value: undefined};
+        this.updateContent = this.updateContent.bind(this);
+        this.state = {value: undefined};
     }
 
-    ACSearch(search_term) {
-        console.log(search_term);
-        this.setState({value: search_term});
+    updateInput(search_term) {
+        this.props.updateInput({target: {name: 'itemName', value: search_term}});
         if (search_term.length > 1) {
             searchProduct(search_term, this.updateContent);
+        } else {
+            this.updateContent('none');
         }
     }
 
@@ -25,24 +25,15 @@ class ProductInputComponent extends React.Component {
         if (dbjson === null) {
             window.alert('网络错误');
         } else if (dbjson == 'none') {
-            this.setState({content: null});
+            this.props.renderResult(null);
         } else {
-            this.setState({
-                content: JSON.parse(dbjson)
-            });
+            this.props.renderResult(JSON.parse(dbjson));
         }
-    }
-
-    updateInput(item) {
-        this.setState({value: item.name + item.number});
     }
 
     render() {
         return (
-            <div style={productSearchStyle}>
-                <TypeInputComponent ACSearch={this.ACSearch} value={this.state.value}/>
-                <ProductSearchResultComponent content={this.state.content} itemClick={this.updateInput}/>
-            </div>
+            <TypeInputComponent style={this.props.style} updateInput={this.updateInput} value={this.props.value} onFocus={this.props.onFocus}/>
         );
     }
 }
@@ -65,17 +56,25 @@ class ProductSearchResultComponent extends React.Component {
                 </div>
             );
         }
-
     }
 }
 
 class BrandComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.itemClick = this.itemClick.bind(this);
+    }
+
+    itemClick(item) {
+        let a = item;
+        a.brand = this.props.brand;
+        this.props.itemClick(a);
+    }
 
     products() {
-        console.log(this.props.products);
         if (this.props.products != undefined) {
             return this.props.products.map((product, index) =>
-                <ProductComponent key={index} name={product.name} items={product.items} itemClick={this.props.itemClick}/>
+                <ProductComponent key={index} name={product.name} items={product.items} itemClick={this.itemClick}/>
             );
         } else {
             return null;
@@ -95,13 +94,29 @@ class BrandComponent extends React.Component {
 }
 
 class ProductComponent extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.itemClick = this.itemClick.bind(this);
+    }
+
+    itemClick(item) {
+        const aa = {
+            itemId: item.id,
+            product: this.props.name,
+            itemName: item.name + ' ' + item.number
+        }
+        console.log(aa);
+        this.props.itemClick(aa);
+    }
+
     render() {
         return (
             <div style={productBoxStyle}>
                 <p style={productBoxStyle.productNameStyle}>
                     {this.props.name}
                 </p>
-                {(this.props.items != undefined) ? <ItemsComponent items={this.props.items} itemClick={this.props.itemClick}/> : null}
+                {(this.props.items != undefined) ? <ItemsComponent items={this.props.items} itemClick={this.itemClick}/> : null}
 
             </div>
         );
@@ -137,13 +152,13 @@ class ItemCellComponent extends React.Component {
     render() {
         if (this.props.info.name == '') {
             return (
-                <button onClick={this.handleClick} style={itemBoxStyle.itemStyle}>
+                <button type="button" onClick={this.handleClick} style={itemBoxStyle.itemStyle}>
                     {this.props.info.number}
                 </button>
             )
         } else {
             return (
-                <button onClick={this.handleClick} style={itemBoxStyle.itemStyle}>
+                <button type="button" onClick={this.handleClick} style={itemBoxStyle.itemStyle}>
                     {this.props.info.name} <br /> {this.props.info.number}
                 </button>
             );
@@ -151,4 +166,4 @@ class ItemCellComponent extends React.Component {
     }
 }
 
-export {ProductInputComponent};
+export {ProductInputComponent, ProductSearchResultComponent};

@@ -7,6 +7,7 @@ const svgUrl = {
 };
 
 const stringBgColor = 'rgba(54, 54, 54, 0.64)';
+const inputGoodColor = 'linear-gradient(rgba(161, 230, 220, 0.7), rgba(80, 115, 110,0.7))'
 
 const appStyle = {
     // background
@@ -37,7 +38,6 @@ const titleBarStyle = {
     background: `linear-gradient(180deg, rgba(${lightLevel},${lightLevel},${lightLevel},0.64) ,rgba(40, 40, 40, 0.8))`,
     width: '100%',
     position: 'relative',
-    fontFamily: 'Lato, YueHei '
 };
 
 const titleStyle = {
@@ -63,5 +63,5 @@ const tabStyle = {
 
 
 
-export {appStyle, titleBarStyle, titleStyle, tabBarStyle, tabStyle, stringBgColor, svgUrl};
+export {appStyle, titleBarStyle, titleStyle, tabBarStyle, tabStyle, stringBgColor, svgUrl, inputGoodColor};
 

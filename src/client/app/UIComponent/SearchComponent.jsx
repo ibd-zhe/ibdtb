@@ -1,31 +1,10 @@
 import React from 'react';
-import {stringBgColor} from '../Style/AppStyle.js'
 
-const searchBoxStyle = {
-    formStyle: {
-        margin: '20px auto 20px',
-        width: 250,
-        height: 30,
-        borderRadius: 5,
-        backgroundColor: stringBgColor
-    },
-    inputStyle: {
-        fontSize: 16,
-        textAlign: 'center',
-        borderStyle: 'none',
-        width: '100%',
-        height: '100%',
-        borderRadius: 5,
-        backgroundColor: 'rgba(0, 0, 0, 0)',
-        color: ''
-    }
-};
 
 class TypeInputComponent extends React.Component {
     constructor(props) {
         super(props);
         this.handleInput = this.handleInput.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {value: ''};
     }
 
@@ -37,24 +16,17 @@ class TypeInputComponent extends React.Component {
     }
 
     handleInput(e) {
-        if (this.props.ACSearch != undefined) {
-            this.props.ACSearch(e.target.value);
+        if (this.props.updateInput != undefined) {
+            this.props.updateInput(e.target.value);
         } else {
             this.setState({value: e.target.value});
         }
     }
 
-
-    handleSubmit(e) {
-        e.preventDefault();
-    }
-
     render() {
         return (
-            <form onSubmit={this.handleSubmit} style={searchBoxStyle.formStyle}>
-                <input type="text" value={this.state.value} style={searchBoxStyle.inputStyle}
-                       onChange={this.handleInput} placeholder={this.props.placeholder}/>
-            </form>
+            <input type="text" value={this.state.value} style={this.props.style}
+                   onChange={this.handleInput} placeholder={this.props.placeholder} onFocus={this.props.onFocus}/>
         );
     }
 }
@@ -62,10 +34,11 @@ class TypeInputComponent extends React.Component {
 class SearchComponent extends TypeInputComponent {
     constructor(props) {
         super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
-        super.handleSubmit(e);
+        e.preventDefault();
         this.props.search(this.state.value);
     }
 

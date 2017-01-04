@@ -3,7 +3,8 @@ import {render} from 'react-dom';
 import TitleBar from './TitleBar.jsx';
 import ReserveComponent from './Content/ReserveComponent.jsx';
 import {appStyle} from './Style/AppStyle.js'
-import {ProductInputComponent} from './Content/ProductSearchComponent.jsx'
+import {NewOrderComponent} from './Content/NewOrderComponent.jsx'
+import {DocComponent} from './Content/docComponent.jsx'
 
 class App extends React.Component {
     constructor(props) {
@@ -22,20 +23,21 @@ class App extends React.Component {
             return (
                 <div style={appStyle}>
                     <TitleBar tabClicked={this.tabClicked}/>
-                    {<ReserveComponent/>}
+                    <ReserveComponent/>
                 </div>
             );
         } else if (tab == '下单') {
             return (
                 <div style={appStyle}>
                     <TitleBar tabClicked={this.tabClicked}/>
-                    {<ProductInputComponent/>}
+                    <NewOrderComponent/>
                 </div>
             );
         } else {
             return (
                 <div style={appStyle}>
                     <TitleBar tabClicked={this.tabClicked}/>
+                    <DocComponent/>
                 </div>
             );
         }
