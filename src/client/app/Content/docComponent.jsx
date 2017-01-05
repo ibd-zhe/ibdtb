@@ -11,7 +11,6 @@ const formStyle = {
     margin: 10
 };
 
-
 const tdStyle = {
     textAlign: 'center',
     padding: 5
@@ -21,7 +20,6 @@ const thStyle = {
     textAlign: 'center',
     padding: 5,
 };
-
 
 class DocComponent extends React.Component {
     render() {
@@ -39,11 +37,10 @@ class DocComponent extends React.Component {
                     </th>
                 </tr>
                 <tbody>
-                    <SingleDocComponent name="客服工作流程" date="1月4日 16点" url="http://54.223.65.44:8100/static/file/ibd/xianhuo.csv"/>
+                    <SingleDocComponent name="客服备注流程" date="1月4日 16点" url="http://54.223.65.44:8100/static/file/ibd/kefu_note.pdf"/>
                     <SingleDocComponent name="打单流程" date=" " url="http://54.223.65.44:8100/static/file/ibd/xianhuo.csv"/>
                     <SingleDocComponent name="上现货" date=" " url="http://54.223.65.44:8100/static/file/ibd/xianhuo.csv"/>
                 </tbody>
-
             </table>
         );
     }
