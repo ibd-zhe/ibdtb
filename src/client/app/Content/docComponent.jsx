@@ -30,14 +30,14 @@ class DocComponent extends React.Component {
                         文档名称
                     </th>
                     <th style={thStyle}>
-                        上次修改时间
+                        版本号
                     </th>
                     <th style={thStyle}>
                         下载
                     </th>
                 </tr>
                 <tbody>
-                    <SingleDocComponent name="客服备注流程" date="1月4日 16点" url="http://54.223.65.44:8100/static/file/ibd/kefu_note.pdf"/>
+                    <SingleDocComponent name="客服备注流程" date="1.2" url="http://54.223.65.44:8100/static/file/ibd/kefu_note.pdf"/>
                     <SingleDocComponent name="打单流程" date=" " url="http://54.223.65.44:8100/static/file/ibd/xianhuo.csv"/>
                     <SingleDocComponent name="上现货" date=" " url="http://54.223.65.44:8100/static/file/ibd/xianhuo.csv"/>
                 </tbody>
