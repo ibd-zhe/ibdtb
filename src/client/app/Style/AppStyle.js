@@ -1,9 +1,9 @@
 import {host} from "../Model/IbdDb.js"
 
 // background
-const bgImgUrl = host + "image/ibd/bg";
+const bgImgUrl = host + "static/image/ibd/bg";
 const svgUrl = {
-    searchSvg: host + "file/svg/search.svg"
+    searchSvg: host + "static/file/svg/search.svg"
 };
 
 const stringBgColor = 'rgba(54, 54, 54, 0.64)';
