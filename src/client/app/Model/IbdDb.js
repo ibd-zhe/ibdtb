@@ -38,4 +38,4 @@ function getSupplyInfo(callback) {
         }
     });
 }
-export {orderByUser, searchProduct, getSupplyInfo};
+export {orderByUser, searchProduct, getSupplyInfo, host};

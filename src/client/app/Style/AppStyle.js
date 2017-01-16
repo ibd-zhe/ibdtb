@@ -1,6 +1,6 @@
+import {host} from "../Model/IbdDb.js"
 
 // background
-const host = "http://54.223.26.222:8100/static/";
 const bgImgUrl = host + "image/ibd/bg";
 const svgUrl = {
     searchSvg: host + "file/svg/search.svg"

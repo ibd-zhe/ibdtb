@@ -1,4 +1,5 @@
 import React from 'react';
+import {host} from '../Model/IbdDb.js'
 
 const boxStyle = {
     width: 400,
@@ -37,9 +38,9 @@ class DocComponent extends React.Component {
                     </th>
                 </tr>
                 <tbody>
-                    <SingleDocComponent name="客服备注流程" date="1.2" url="http://54.223.65.44:8100/static/file/ibd/kefu_note.pdf"/>
-                    <SingleDocComponent name="打单流程" date=" " url="http://54.223.65.44:8100/static/file/ibd/xianhuo.csv"/>
-                    <SingleDocComponent name="上现货" date=" " url="http://54.223.65.44:8100/static/file/ibd/xianhuo.csv"/>
+                    <SingleDocComponent name="客服备注流程" date="1.2" url={host + "static/file/ibd/kefu_note.pdf"} />
+                    <SingleDocComponent name="打单流程" date=" " url={host + "static/file/ibd/xianhuo.csv"}/>
+                    <SingleDocComponent name="上现货" date=" " url={host + "static/file/ibd/xianhuo.csv"}/>
                 </tbody>
             </table>
         );
