@@ -3,7 +3,7 @@
  */
 var request = require('request');
 
-const host = "http://54.223.65.44:8100/";
+const host = "http://54.223.26.222:8100/";
 const orderUrl = host + "orders/";
 const productUrl = host + "product/";
 const supplyChainUrl = host + "supply"
