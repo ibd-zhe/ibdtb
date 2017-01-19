@@ -38,7 +38,7 @@ class DocComponent extends React.Component {
                     </th>
                 </tr>
                 <tbody>
-                    <SingleDocComponent name="客服备注流程" date="1.2" url={host + "static/file/ibd/kefu_note.pdf"} />
+                    <SingleDocComponent name="客服备注流程" date="1.2" url={host + "static/file/ibd/kefu_note.docx"} />
                     <SingleDocComponent name="打单流程" date=" " url={host + "static/file/ibd/xianhuo.csv"}/>
                     <SingleDocComponent name="上现货" date=" " url={host + "static/file/ibd/xianhuo.csv"}/>
                 </tbody>
